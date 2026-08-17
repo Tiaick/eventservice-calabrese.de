@@ -18,6 +18,11 @@ export type Leistung = {
   text: string[];
   /** Stichpunkte – tragen die konkreten technischen Fakten */
   details: { titel: string; wert: string }[];
+  /**
+   * Die eine Kennzahl, die unter dem Bild als Maßangabe steht – kurz genug,
+   * um in eine Bemaßungslinie zu passen.
+   */
+  kenngroesse?: string;
   abPreis?: string;
   bild: string;
   bildAlt: string;
@@ -40,6 +45,7 @@ export const leistungen: Leistung[] = [
       { titel: "Bühne XXL", wert: "über 60 m² mit Dach und Traversenkonstruktion" },
       { titel: "Aufbau", wert: "durch eigenes, eingespieltes Team" },
     ],
+    kenngroesse: "6,00 × 8,00 m · 48 m²",
     abPreis: "ab 400 €",
     bild: "/images/platzhalter-buehnen.jpg",
     bildAlt:
@@ -61,6 +67,7 @@ export const leistungen: Leistung[] = [
       { titel: "Zubehör", wert: "Monitoring, Funkstrecken, Mischpult, FOH-Platz" },
       { titel: "Personal", wert: "Tontechniker auf Wunsch für die ganze Veranstaltung" },
     ],
+    kenngroesse: "bis 5.000 Personen Open Air",
     abPreis: "ab 900 €",
     bild: "/images/platzhalter-tontechnik.jpg",
     bildAlt:
@@ -82,6 +89,7 @@ export const leistungen: Leistung[] = [
       { titel: "Traversen", wert: "Ground Support und Bühnendach-Rigging" },
       { titel: "Personal", wert: "Lichttechniker fährt die Show auf Wunsch live" },
     ],
+    kenngroesse: "Movingheads · Beams · Washes · Hazer",
     abPreis: "ab 700 €",
     bild: "/images/platzhalter-lichttechnik.jpg",
     bildAlt:
@@ -103,6 +111,7 @@ export const leistungen: Leistung[] = [
       { titel: "Streamer & Konfetti", wert: "Kanonen für den großen Schlussmoment" },
       { titel: "Sicherheit", wert: "Sicherheitskonzept, Abstände, Abstimmung mit Behörden" },
     ],
+    kenngroesse: "Feuerbälle 6 – 20 m Höhe",
     abPreis: "ab 150 €",
     bild: "/images/platzhalter-special-effects.jpg",
     bildAlt: "Konfettiregen über einer Menschenmenge vor blau beleuchteter Bühne",
@@ -123,6 +132,7 @@ export const leistungen: Leistung[] = [
       { titel: "Einmessung", wert: "Justage und Publikumsabstand vor jeder Show" },
       { titel: "Umsetzung", wert: "musiksynchron, kombiniert mit Haze und Licht" },
     ],
+    kenngroesse: "zertifiziert · Laserschutz vor Ort",
     bild: "/images/platzhalter-lasershow.jpg",
     bildAlt: "Weiße Lichtfächer strahlen über eine dunkle Halle voller Menschen",
   },
@@ -142,6 +152,7 @@ export const leistungen: Leistung[] = [
       { titel: "Inklusive", wert: "Ausschankpersonal, Kühlung, Abrechnung" },
       { titel: "Vorab", wert: "gemeinsame Kalkulation, ob das Modell für Sie trägt" },
     ],
+    kenngroesse: "bis 15 Schankwagen",
     bild: "/images/platzhalter-gastro-kooperation.jpg",
     bildAlt: "Gäste stoßen bei einer Abendveranstaltung mit Weingläsern an",
   },

@@ -84,10 +84,10 @@ export function GalleryGrid() {
               }}
               aria-pressed={aktiv}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xs border px-5 py-2.5 font-display text-[0.72rem] font-semibold tracking-[0.1em] uppercase transition-all duration-300",
+                "inline-flex items-center gap-2.5 border px-5 py-2.5 font-mono text-[0.7rem] font-medium tracking-[0.12em] uppercase transition-colors duration-200",
                 aktiv
                   ? "border-flare-500 bg-flare-500 text-ink-950"
-                  : "border-ink-100/15 text-ink-300 hover:border-flare-500/50 hover:text-flare-400",
+                  : "border-ink-100/15 text-ink-300 hover:border-flare-500 hover:text-flare-400",
               )}
             >
               {kategorie.label}
@@ -114,7 +114,7 @@ export function GalleryGrid() {
               ausloeser.current = e.currentTarget;
               setOffenerIndex(i);
             }}
-            className="group relative mb-5 block w-full break-inside-avoid overflow-hidden rounded-card border border-ink-100/10 transition-colors duration-500 hover:border-flare-500/45"
+            className="group relative mb-5 block w-full break-inside-avoid overflow-hidden border border-ink-100/12 transition-colors duration-300 hover:border-flare-500/50"
           >
             {/* PLATZHALTER-Bild – siehe public/images/PLATZHALTER-BILDER.md */}
             <Image
@@ -133,14 +133,14 @@ export function GalleryGrid() {
 
             <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-left">
               <span>
-                <span className="block font-display text-[0.7rem] font-semibold tracking-[0.18em] text-flare-400 uppercase">
+                <span className="block font-mono text-[0.6rem] tracking-[0.16em] text-flare-400 uppercase">
                   {galerieKategorien.find((k) => k.id === bild.kategorie)?.label}
                 </span>
-                <span className="mt-1.5 block font-display text-base font-semibold text-white">
+                <span className="mt-1.5 block font-display text-lg font-semibold uppercase text-white">
                   {bild.titel}
                 </span>
               </span>
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xs border border-ink-100/25 bg-ink-950/60 text-ink-100 opacity-0 transition-all duration-500 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <span className="grid h-9 w-9 shrink-0 place-items-center border border-ink-100/25 bg-ink-950/60 text-ink-100 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                 <IconPfeil className="h-4 w-4 -rotate-45" />
               </span>
             </span>
@@ -160,7 +160,7 @@ export function GalleryGrid() {
           role="dialog"
           aria-modal="true"
           aria-label={`${aktuellesBild.titel} – Bild ${(offenerIndex ?? 0) + 1} von ${bilder.length}`}
-          className="fixed inset-0 z-100 flex flex-col bg-ink-950/96 backdrop-blur-md"
+          className="fixed inset-0 z-100 flex flex-col bg-ink-950/97 backdrop-blur-md"
         >
           {/* Klickfläche zum Schließen hinter dem Bild */}
           <button
@@ -173,16 +173,16 @@ export function GalleryGrid() {
 
           <div className="relative flex items-center justify-between gap-4 border-b border-ink-100/10 px-5 py-4 sm:px-8">
             <p className="min-w-0">
-              <span className="block font-display text-[0.7rem] font-semibold tracking-[0.18em] text-flare-400 uppercase">
+              <span className="block font-mono text-[0.6rem] tracking-[0.16em] text-flare-400 uppercase">
                 {galerieKategorien.find((k) => k.id === aktuellesBild.kategorie)?.label}
               </span>
-              <span className="mt-1 block truncate font-display text-sm font-semibold text-white">
+              <span className="mt-1 block truncate font-mono text-sm text-white">
                 {aktuellesBild.titel}
               </span>
             </p>
 
             <div className="flex items-center gap-3">
-              <p className="font-display text-xs text-ink-400 tabular-nums">
+              <p className="font-mono text-xs text-ink-400 tabular-nums">
                 {(offenerIndex ?? 0) + 1} / {bilder.length}
               </p>
               <button
@@ -190,7 +190,7 @@ export function GalleryGrid() {
                 type="button"
                 onClick={schliessen}
                 aria-label="Lightbox schließen"
-                className="grid h-10 w-10 place-items-center rounded-xs border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
+                className="grid h-10 w-10 place-items-center border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
               >
                 <IconSchliessen className="h-5 w-5" />
               </button>
@@ -204,7 +204,7 @@ export function GalleryGrid() {
               width={aktuellesBild.breite}
               height={aktuellesBild.hoehe}
               sizes="90vw"
-              className="max-h-full w-auto max-w-full rounded-card object-contain"
+              className="max-h-full w-auto max-w-full object-contain"
             />
           </div>
 
@@ -213,7 +213,7 @@ export function GalleryGrid() {
               type="button"
               onClick={() => blaettern(-1)}
               aria-label="Vorheriges Bild"
-              className="grid h-12 w-12 place-items-center rounded-xs border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
+              className="grid h-12 w-12 place-items-center border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
             >
               <IconPfeil className="h-5 w-5 rotate-180" />
             </button>
@@ -221,7 +221,7 @@ export function GalleryGrid() {
               type="button"
               onClick={() => blaettern(1)}
               aria-label="Nächstes Bild"
-              className="grid h-12 w-12 place-items-center rounded-xs border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
+              className="grid h-12 w-12 place-items-center border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400"
             >
               <IconPfeil className="h-5 w-5" />
             </button>

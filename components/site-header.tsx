@@ -47,60 +47,49 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-soft",
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         gescrollt || menueOffen
-          ? "border-b border-ink-100/10 bg-ink-950/85 backdrop-blur-xl"
+          ? "border-b border-ink-100/12 bg-ink-950/92 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="container-page">
         <div
           className={cn(
-            "flex items-center justify-between transition-all duration-500 ease-out-soft",
+            "flex items-center justify-between transition-all duration-300",
             gescrollt ? "h-18" : "h-22",
           )}
         >
-          <Link
-            href="/"
-            aria-label={`${site.name} – zur Startseite`}
-            className="shrink-0 rounded-xs"
-          >
+          <Link href="/" aria-label={`${site.name} – zur Startseite`} className="shrink-0">
             <Logo />
           </Link>
 
-          {/* Desktop-Navigation */}
+          {/* Desktop-Navigation – durchnummeriert wie ein Ablaufplan */}
           <nav aria-label="Hauptnavigation" className="hidden lg:block">
-            <ul className="flex items-center gap-1">
+            <ul className="flex items-center">
               {navigation.map((eintrag) => (
                 <li key={eintrag.href}>
                   <Link
                     href={eintrag.href}
                     aria-current={istAktiv(eintrag.href) ? "page" : undefined}
                     className={cn(
-                      "relative block rounded-xs px-4 py-2 font-display text-[0.78rem] font-semibold tracking-[0.06em] uppercase transition-colors duration-200",
+                      "block px-4 py-2 font-mono text-label uppercase transition-colors duration-200",
                       istAktiv(eintrag.href)
                         ? "text-flare-400"
-                        : "text-ink-300 hover:text-ink-50",
+                        : "text-ink-400 hover:text-ink-50",
                     )}
                   >
                     {eintrag.label}
-                    <span
-                      aria-hidden="true"
-                      className={cn(
-                        "absolute inset-x-4 -bottom-0.5 h-px origin-left bg-flare-500 transition-transform duration-300 ease-out-expo",
-                        istAktiv(eintrag.href) ? "scale-x-100" : "scale-x-0",
-                      )}
-                    />
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <a
               href={kontaktLinks.telefon}
-              className="hidden items-center gap-2 rounded-xs px-3 py-2 font-display text-[0.78rem] font-semibold tracking-[0.06em] text-ink-200 uppercase transition-colors hover:text-flare-400 xl:inline-flex"
+              className="hidden items-center gap-2 font-mono text-label text-ink-200 transition-colors hover:text-flare-400 xl:inline-flex"
             >
               <IconTelefon className="h-4 w-4" />
               {site.telefon.anzeige}
@@ -119,7 +108,7 @@ export function SiteHeader() {
               aria-expanded={menueOffen}
               aria-controls="mobilmenue"
               aria-label={menueOffen ? "Menü schließen" : "Menü öffnen"}
-              className="grid h-11 w-11 place-items-center rounded-xs border border-ink-100/15 text-ink-100 transition-colors hover:border-flare-500/60 hover:text-flare-400 lg:hidden"
+              className="grid h-11 w-11 place-items-center border border-ink-100/20 text-ink-100 transition-colors hover:border-flare-500 hover:text-flare-400 lg:hidden"
             >
               {menueOffen ? (
                 <IconSchliessen className="h-5 w-5" />
@@ -131,18 +120,16 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobiles Menü */}
-      {/* Füllt die Resthöhe unter der Kopfleiste, damit die Seite darunter nicht
-          durchscheint – der Body ist währenddessen im Scrollen gesperrt. */}
+      {/* Mobiles Menü – füllt die Resthöhe unter der Kopfleiste */}
       <div
         id="mobilmenue"
         hidden={!menueOffen}
-        className="min-h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-ink-100/10 bg-ink-950 lg:hidden"
+        className="planraster min-h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-ink-100/12 bg-ink-950 lg:hidden"
       >
         <nav aria-label="Hauptnavigation mobil" className="container-page py-6">
-          <ul className="flex flex-col">
+          <ul className="border-t border-ink-100/12">
             {navigation.map((eintrag, i) => (
-              <li key={eintrag.href} className="border-b border-ink-100/8 last:border-0">
+              <li key={eintrag.href} className="border-b border-ink-100/12">
                 <Link
                   href={eintrag.href}
                   aria-current={istAktiv(eintrag.href) ? "page" : undefined}
@@ -150,11 +137,11 @@ export function SiteHeader() {
                      den Pfad, der auch beim Klick auf die aktive Seite greifen muss. */
                   onClick={() => setMenueOffen(false)}
                   className={cn(
-                    "flex items-baseline gap-4 py-4 font-display text-2xl font-bold tracking-[-0.02em]",
+                    "flex items-baseline gap-4 py-4 font-display text-3xl font-bold uppercase",
                     istAktiv(eintrag.href) ? "text-flare-400" : "text-ink-50",
                   )}
                 >
-                  <span className="font-sans text-[0.7rem] font-medium text-ink-500 tabular-nums">
+                  <span className="font-mono text-[0.65rem] font-medium text-ink-500">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {eintrag.label}
@@ -175,7 +162,7 @@ export function SiteHeader() {
             <div className="grid grid-cols-2 gap-3">
               <a
                 href={kontaktLinks.telefon}
-                className="inline-flex h-13 items-center justify-center gap-2 rounded-xs border border-ink-100/20 font-display text-xs font-semibold tracking-[0.09em] text-ink-100 uppercase transition-colors hover:border-flare-500/60 hover:text-flare-400"
+                className="inline-flex h-13 items-center justify-center gap-2 border border-ink-100/20 font-mono text-[0.75rem] font-medium tracking-[0.12em] text-ink-100 uppercase transition-colors hover:border-flare-500 hover:text-flare-400"
               >
                 <IconTelefon className="h-4 w-4" />
                 Anrufen
@@ -184,7 +171,7 @@ export function SiteHeader() {
                 href={kontaktLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-13 items-center justify-center gap-2 rounded-xs border border-ink-100/20 font-display text-xs font-semibold tracking-[0.09em] text-ink-100 uppercase transition-colors hover:border-flare-500/60 hover:text-flare-400"
+                className="inline-flex h-13 items-center justify-center gap-2 border border-ink-100/20 font-mono text-[0.75rem] font-medium tracking-[0.12em] text-ink-100 uppercase transition-colors hover:border-flare-500 hover:text-flare-400"
               >
                 <IconWhatsapp className="h-4 w-4" />
                 WhatsApp

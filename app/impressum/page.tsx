@@ -15,7 +15,8 @@ export default function ImpressumSeite() {
   return (
     <>
       <PageHeader
-        eyebrow="Rechtliches"
+        blatt="Blatt 06"
+        marke="Rechtliches"
         titel="Impressum"
         lead="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)."
       />

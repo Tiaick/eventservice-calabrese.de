@@ -22,7 +22,7 @@ export function MapConsent() {
   const karteUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
 
   return (
-    <div className="relative aspect-4/3 overflow-hidden rounded-card border border-ink-100/10 sm:aspect-video lg:aspect-4/3">
+    <div className="relative aspect-4/3 overflow-hidden border border-ink-100/12 sm:aspect-video lg:aspect-4/3">
       {geladen ? (
         <iframe
           src={karteUrl}
@@ -32,17 +32,12 @@ export function MapConsent() {
           className="h-full w-full border-0"
         />
       ) : (
-        <div className="flex h-full flex-col items-center justify-center gap-5 bg-ink-900 p-8 text-center">
+        <div className="planraster-fein flex h-full flex-col items-center justify-center gap-5 bg-ink-950 p-8 text-center">
           {/* Angedeutetes Kartenraster als ruhiger Hintergrund */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(var(--color-ink-100)_1px,transparent_1px),linear-gradient(90deg,var(--color-ink-100)_1px,transparent_1px)] [background-size:44px_44px]"
-          />
-
           <IconOrt className="relative h-8 w-8 text-flare-500" />
 
           <div className="relative">
-            <p className="font-display text-h4 text-white">
+            <p className="font-mono text-base text-white">
               {site.adresse.strasse}, {site.adresse.plz} {site.adresse.ort}
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-400">
@@ -59,7 +54,7 @@ export function MapConsent() {
               href={kontaktLinks.route}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center rounded-xs border border-ink-100/20 px-5 font-display text-[0.7rem] font-semibold tracking-[0.09em] text-ink-100 uppercase transition-colors hover:border-flare-500/60 hover:text-flare-400"
+              className="inline-flex h-11 items-center justify-center border border-ink-100/20 px-5 font-mono text-[0.7rem] font-medium tracking-[0.12em] text-ink-100 uppercase transition-colors hover:border-flare-500 hover:text-flare-400"
             >
               In neuem Tab öffnen
             </a>

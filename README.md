@@ -33,15 +33,31 @@ Layoutänderungen aktualisiert werden können.
 
 ## Design-System
 
-Alle Tokens stehen im `@theme`-Block in `app/globals.css` – Farben, Typografie-Skala,
-Radien, Schatten, Timing. Es gibt keine `tailwind.config.js`.
+Gestalterische Leitidee ist der **technische Rider**: Die Seite borgt sich die
+Formensprache aus Bühnenplänen und Materiallisten, statt dem üblichen Muster aus
+abgerundeten Karten auf dunklem Grund zu folgen.
 
-- Farbwelt: `ink-*` (tiefes Anthrazit) als Basis, `flare-*` (Bühnenlicht-Orange) als Akzent
-- Schriften: Archivo für Headlines, Inter für Fließtext – beide über `next/font` selbst
-  gehostet, keine Verbindung zu Google Fonts zur Laufzeit
-- Die Seite ist bewusst nur dunkel gestaltet (`color-scheme: dark`)
+Alle Tokens stehen im `@theme`-Block in `app/globals.css` – Farben, Typografie-Skala,
+Radien, Timing. Es gibt keine `tailwind.config.js`.
+
+- **Schriften:** IBM Plex Sans Condensed für Schlagzeilen, IBM Plex Sans für Fließtext,
+  IBM Plex Mono für alle Daten, Labels und Maßangaben. Über `next/font` selbst gehostet,
+  keine Verbindung zu Google Fonts zur Laufzeit.
+- **Kanten:** Sämtliche Radien sind auf `0` gesetzt, auch die Tailwind-Standardwerte.
+  Technische Zeichnungen kennen keine Rundungen – `rounded-*` bleibt deshalb wirkungslos.
+- **Farbwelt:** `ink-*` (tiefes Anthrazit) als Basis, `flare-*` (Signalorange) als
+  Akzent. Der Akzent ist bewusst sparsam eingesetzt: Handlungsaufforderung, aktiver
+  Zustand, die eine Zahl, auf die es ankommt – nicht als Dauerton auf jedem Label.
+- **Gliederung:** Haarlinien statt Kartenflächen. Wiederkehrende Bauteile liegen in
+  `components/plan.tsx`: `Sektionsmarke` (`01 / BÜHNEN ────`), `Masslinie` für
+  Maßangaben am Bild, `Eckmarken` und `Datenliste`.
+- Die Seite ist bewusst nur dunkel gestaltet (`color-scheme: dark`).
 - `ink-400` und `ink-500` sind auf mindestens 4,5:1 Kontrast eingestellt (WCAG AA);
-  beim Nachjustieren der Palette bitte erneut prüfen
+  `ink-600` ist ausschließlich für Nicht-Text zugelassen. Beim Nachjustieren der
+  Palette bitte erneut prüfen.
+- **Zeilenhöhen** der Display-Grade sind nicht enger als `0.95` gesetzt: In Versalien
+  brauchen die Umlaute Ä, Ö und Ü Platz über der Versalhöhe, sonst kappt die Zeile
+  darüber die Punkte.
 
 ## Kontaktformular
 

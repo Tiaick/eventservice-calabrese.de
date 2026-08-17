@@ -15,7 +15,8 @@ export default function DatenschutzSeite() {
   return (
     <>
       <PageHeader
-        eyebrow="Rechtliches"
+        blatt="Blatt 07"
+        marke="Rechtliches"
         titel="Datenschutzerklärung"
         lead="Informationen zur Verarbeitung personenbezogener Daten nach Art. 13 und 14 DSGVO."
       />

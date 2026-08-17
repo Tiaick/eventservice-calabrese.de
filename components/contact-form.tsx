@@ -10,7 +10,7 @@ import { startZustand } from "@/lib/kontakt-formular";
 import { cn } from "@/lib/utils";
 
 const feldBasis =
-  "w-full rounded-xs border bg-ink-950 px-4 py-3.5 text-ink-100 transition-colors duration-200 " +
+  "w-full border bg-ink-950 px-4 py-3.5 font-mono text-datum text-ink-100 transition-colors duration-200 " +
   "placeholder:text-ink-500 hover:border-ink-100/25 focus:border-flare-500 focus:outline-none";
 
 export function ContactForm() {
@@ -40,10 +40,10 @@ export function ContactForm() {
         {zustand.status !== "leer" && zustand.meldung ? (
           <div
             className={cn(
-              "mb-8 flex items-start gap-4 rounded-card border p-6",
+              "mb-8 flex items-start gap-4 border-l-2 p-5",
               zustand.status === "erfolg"
-                ? "border-flare-500/40 bg-flare-500/8"
-                : "border-red-500/40 bg-red-500/8",
+                ? "border-flare-500 bg-flare-500/[0.07]"
+                : "border-red-500 bg-red-500/[0.07]",
             )}
           >
             {zustand.status === "erfolg" ? (
@@ -51,7 +51,7 @@ export function ContactForm() {
             ) : (
               <span
                 aria-hidden="true"
-                className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-red-400 text-xs font-bold text-red-400"
+                className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center border border-red-400 font-mono text-xs font-medium text-red-400"
               >
                 !
               </span>
@@ -127,7 +127,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${id}-anlass`}
-            className="mb-2.5 flex items-baseline gap-2 font-display text-[0.7rem] font-semibold tracking-[0.14em] text-ink-300 uppercase"
+            className="mb-2.5 flex items-baseline gap-2 font-mono text-label text-ink-300 uppercase"
           >
             Anlass
             <span className="font-sans text-[0.7rem] tracking-normal text-ink-500 normal-case">
@@ -155,7 +155,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${id}-nachricht`}
-            className="mb-2.5 flex items-baseline gap-2 font-display text-[0.7rem] font-semibold tracking-[0.14em] text-ink-300 uppercase"
+            className="mb-2.5 flex items-baseline gap-2 font-mono text-label text-ink-300 uppercase"
           >
             Nachricht
             <span aria-hidden="true" className="text-flare-500">
@@ -203,7 +203,7 @@ export function ContactForm() {
                 feldFehler("datenschutz") ? `${id}-datenschutz-fehler` : undefined
               }
               className={cn(
-                "mt-0.5 h-5 w-5 shrink-0 appearance-none rounded-xs border bg-ink-950 transition-colors",
+                "mt-0.5 h-5 w-5 shrink-0 appearance-none border bg-ink-950 transition-colors",
                 "checked:border-flare-500 checked:bg-flare-500",
                 "checked:bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2308090b%22 stroke-width=%223%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m4.5 12.5 5 5 10-11%22/></svg>')] checked:bg-contain checked:bg-center checked:bg-no-repeat",
                 feldFehler("datenschutz") ? "border-red-500/70" : "border-ink-100/25",
@@ -275,7 +275,7 @@ function Feld({
     <div>
       <label
         htmlFor={id}
-        className="mb-2.5 flex items-baseline gap-2 font-display text-[0.7rem] font-semibold tracking-[0.14em] text-ink-300 uppercase"
+        className="mb-2.5 flex items-baseline gap-2 font-mono text-label text-ink-300 uppercase"
       >
         {label}
         {pflicht ? (

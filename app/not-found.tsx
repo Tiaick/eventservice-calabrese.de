@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 export default function NichtGefunden() {
   return (
     <section className="relative isolate flex min-h-[70svh] items-center overflow-hidden">
-      <div aria-hidden="true" className="spotlight absolute inset-0 -z-10" />
+      <div aria-hidden="true" className="planraster absolute inset-0 -z-10" />
 
       <div className="container-page py-32 text-center">
-        <p className="font-display text-eyebrow text-flare-400 uppercase">Fehler 404</p>
+        <p className="font-mono text-label text-flare-400 uppercase">Fehler 404</p>
 
-        <h1 className="mt-6 text-h1 text-white">Diese Seite steht nicht auf dem Plan</h1>
+        <h1 className="mt-6 text-h1 uppercase text-white">Diese Seite steht nicht auf dem Plan</h1>
 
         <p className="mx-auto mt-6 max-w-xl text-lead text-ink-300">
           Die aufgerufene Adresse gibt es nicht – vielleicht wurde sie verschoben oder

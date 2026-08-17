@@ -1,141 +1,138 @@
 import Link from "next/link";
 
-import { IconMail, IconOrt, IconTelefon, IconWhatsapp } from "@/components/icons";
 import { Logo } from "@/components/logo";
 import { leistungen } from "@/lib/content";
 import { kontaktLinks, navigation, rechtlicheNavigation, site } from "@/lib/site";
 
+/**
+ * Fußzeile im Aufbau eines Planblattfußes: Spalten mit Monospace-Bezeichnern,
+ * durchgehende Haarlinien, keine Flächen.
+ */
 export function SiteFooter() {
   const jahr = new Date().getFullYear();
 
-  return (
-    <footer className="relative border-t border-ink-100/10 bg-ink-900">
-      {/* Warmer Lichtschein an der Oberkante – schließt die Seite mit dem
-          gleichen Bühnenlicht ab, mit dem sie oben beginnt. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-flare-500/50 to-transparent"
-      />
+  const spalten = [
+    {
+      titel: "Leistungen",
+      eintraege: leistungen.map((l) => ({
+        label: l.label,
+        href: `/leistungen#${l.id}` as const,
+      })),
+    },
+    {
+      titel: "Seiten",
+      eintraege: navigation.map((n) => ({ label: n.label, href: n.href })),
+    },
+  ];
 
+  return (
+    <footer className="border-t border-ink-100/15 bg-ink-900">
       <div className="container-page">
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
+        <div className="grid gap-12 py-14 lg:grid-cols-12 lg:gap-8 lg:py-18">
           {/* Marke */}
           <div className="lg:col-span-4">
             <Logo />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink-400">
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-400">
               Bühnen, Ton, Licht und Effekte für Veranstaltungen in ganz Norddeutschland.
               Seit über 15 Jahren – vom Vereinsfest bis zum Open Air.
             </p>
 
-            <div className="mt-8 flex gap-3">
+            <ul className="mt-7 flex gap-6">
               {site.social.map((profil) => (
-                <a
-                  key={profil.label}
-                  href={profil.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xs border border-ink-100/12 px-4 py-2 font-display text-[0.7rem] font-semibold tracking-[0.14em] text-ink-300 uppercase transition-colors hover:border-flare-500/60 hover:text-flare-400"
-                >
-                  {profil.label}
-                </a>
+                <li key={profil.label}>
+                  <a
+                    href={profil.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[0.65rem] tracking-[0.14em] text-ink-400 uppercase transition-colors hover:text-flare-400"
+                  >
+                    {profil.label}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Leistungen */}
-          <nav aria-labelledby="footer-leistungen" className="lg:col-span-3">
-            <h2
-              id="footer-leistungen"
-              className="font-display text-eyebrow text-ink-500 uppercase"
+          {/* Verzeichnisse */}
+          {spalten.map((spalte) => (
+            <nav
+              key={spalte.titel}
+              aria-label={spalte.titel}
+              className="lg:col-span-2"
             >
-              Leistungen
-            </h2>
-            <ul className="mt-6 space-y-3">
-              {leistungen.map((leistung) => (
-                <li key={leistung.id}>
-                  <Link
-                    href={`/leistungen#${leistung.id}`}
-                    className="text-sm text-ink-300 transition-colors hover:text-flare-400"
-                  >
-                    {leistung.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+              <h2 className="border-b border-ink-100/15 pb-3 font-mono text-[0.6rem] tracking-[0.18em] text-ink-500 uppercase">
+                {spalte.titel}
+              </h2>
+              <ul className="mt-4 space-y-2.5">
+                {spalte.eintraege.map((eintrag) => (
+                  <li key={eintrag.href}>
+                    <Link
+                      href={eintrag.href}
+                      className="text-sm text-ink-300 transition-colors hover:text-flare-400"
+                    >
+                      {eintrag.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
-          {/* Seiten */}
-          <nav aria-labelledby="footer-seiten" className="lg:col-span-2">
-            <h2
-              id="footer-seiten"
-              className="font-display text-eyebrow text-ink-500 uppercase"
-            >
-              Seiten
+          {/* Kontakt als Datenblock */}
+          <div className="lg:col-span-4">
+            <h2 className="border-b border-ink-100/15 pb-3 font-mono text-[0.6rem] tracking-[0.18em] text-ink-500 uppercase">
+              Kontakt
             </h2>
-            <ul className="mt-6 space-y-3">
-              {navigation.map((eintrag) => (
-                <li key={eintrag.href}>
-                  <Link
-                    href={eintrag.href}
-                    className="text-sm text-ink-300 transition-colors hover:text-flare-400"
-                  >
-                    {eintrag.label}
-                  </Link>
-                </li>
+            <dl className="mt-4 space-y-3 font-mono text-datum">
+              {[
+                { k: "Tel", v: site.telefon.anzeige, href: kontaktLinks.telefon, extern: false },
+                { k: "WA", v: "WhatsApp schreiben", href: kontaktLinks.whatsapp, extern: true },
+                { k: "Mail", v: site.email, href: kontaktLinks.email, extern: false },
+              ].map((z) => (
+                <div key={z.k} className="flex gap-4">
+                  <dt className="w-10 shrink-0 text-[0.6rem] tracking-[0.14em] text-ink-500 uppercase">
+                    {z.k}
+                  </dt>
+                  <dd className="min-w-0">
+                    <a
+                      href={z.href}
+                      {...(z.extern
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="break-all text-ink-200 transition-colors hover:text-flare-400"
+                    >
+                      {z.v}
+                    </a>
+                  </dd>
+                </div>
               ))}
-            </ul>
-          </nav>
-
-          {/* Kontakt */}
-          <div className="lg:col-span-3">
-            <h2 className="font-display text-eyebrow text-ink-500 uppercase">Kontakt</h2>
-            <address className="mt-6 space-y-4 text-sm not-italic">
-              <a
-                href={kontaktLinks.telefon}
-                className="flex items-start gap-3 text-ink-200 transition-colors hover:text-flare-400"
-              >
-                <IconTelefon className="mt-0.5 h-4 w-4 shrink-0 text-flare-500" />
-                {site.telefon.anzeige}
-              </a>
-              <a
-                href={kontaktLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 text-ink-200 transition-colors hover:text-flare-400"
-              >
-                <IconWhatsapp className="mt-0.5 h-4 w-4 shrink-0 text-flare-500" />
-                WhatsApp schreiben
-              </a>
-              <a
-                href={kontaktLinks.email}
-                className="flex items-start gap-3 break-all text-ink-200 transition-colors hover:text-flare-400"
-              >
-                <IconMail className="mt-0.5 h-4 w-4 shrink-0 text-flare-500" />
-                {site.email}
-              </a>
-              <p className="flex items-start gap-3 text-ink-300">
-                <IconOrt className="mt-0.5 h-4 w-4 shrink-0 text-flare-500" />
-                <span>
-                  {site.adresse.strasse}
-                  <br />
-                  {site.adresse.plz} {site.adresse.ort}
-                </span>
-              </p>
-            </address>
+              <div className="flex gap-4">
+                <dt className="w-10 shrink-0 text-[0.6rem] tracking-[0.14em] text-ink-500 uppercase">
+                  Ort
+                </dt>
+                <dd className="text-ink-300">
+                  <address className="not-italic">
+                    {site.adresse.strasse}
+                    <br />
+                    {site.adresse.plz} {site.adresse.ort}
+                  </address>
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
 
-        {/* Fußzeile */}
-        <div className="flex flex-col gap-4 border-t border-ink-100/10 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-ink-500">
-            © {jahr} {site.legalName}. Alle Rechte vorbehalten.
+        {/* Blattfuß */}
+        <div className="flex flex-col gap-3 border-t border-ink-100/15 py-6 font-mono text-[0.65rem] text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {jahr} {site.legalName}
           </p>
           <ul className="flex flex-wrap gap-6">
             {rechtlicheNavigation.map((eintrag) => (
               <li key={eintrag.href}>
                 <Link
                   href={eintrag.href}
-                  className="text-xs text-ink-500 transition-colors hover:text-flare-400"
+                  className="uppercase transition-colors hover:text-flare-400"
                 >
                   {eintrag.label}
                 </Link>

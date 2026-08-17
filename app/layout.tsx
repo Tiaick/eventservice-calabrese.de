@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Inter } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Condensed } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -8,17 +8,25 @@ import { site } from "@/lib/site";
 
 import "./globals.css";
 
-/* Display-Schrift mit Bühnenpräsenz – trägt Headlines und Zahlen. */
-const archivo = Archivo({
-  variable: "--font-archivo",
+/* Schlagzeilen: schmal laufend, mit Plakatwirkung im großen Grad. */
+const plexCondensed = IBM_Plex_Sans_Condensed({
+  variable: "--font-plex-condensed",
   subsets: ["latin"],
   weight: ["600", "700"],
   display: "swap",
 });
 
-/* Ruhige Fließtext-Schrift mit guter Lesbarkeit in langen Absätzen. */
-const inter = Inter({
-  variable: "--font-inter",
+/* Fließtext: ruhig und gut lesbar über lange Absätze. */
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-plex-sans",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+/* Daten, Labels und Maßangaben – trägt den technischen Charakter der Seite. */
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
@@ -85,12 +93,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      className={`${archivo.variable} ${inter.variable} h-full antialiased`}
+      className={`${plexCondensed.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ink-950">
         <a
           href="#inhalt"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-xs focus:bg-flare-500 focus:px-4 focus:py-2 focus:font-display focus:text-sm focus:font-semibold focus:text-ink-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:bg-flare-500 focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-medium focus:text-ink-950"
         >
           Zum Inhalt springen
         </a>

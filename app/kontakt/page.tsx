@@ -46,24 +46,30 @@ export default function KontaktSeite() {
   return (
     <>
       <PageHeader
-        eyebrow="Kontakt"
+        blatt="Blatt 05"
+        marke="Kontakt"
         titel="Sprechen wir über Ihre Veranstaltung"
         lead="Schildern Sie uns kurz, was Sie vorhaben. Sie bekommen von uns eine ehrliche Einschätzung und ein Angebot mit klaren Positionen – in der Regel innerhalb eines Werktags."
         beiwerk={
-          <div className="overflow-hidden rounded-card border border-ink-100/10 bg-ink-900/50">
-            <p className="flex items-center gap-2.5 border-b border-ink-100/10 px-6 py-4 font-display text-[0.7rem] font-semibold tracking-[0.18em] text-ink-500 uppercase">
+          <div>
+            <p className="flex items-center gap-2.5 border-b border-ink-100/15 pb-3 font-mono text-label text-ink-500 uppercase">
               <IconUhr className="h-4 w-4 text-flare-500" />
               Erreichbarkeit
             </p>
-            <dl className="divide-y divide-ink-100/10">
+            <dl>
               {site.oeffnungszeiten.map((zeit) => (
-                <div key={zeit.tage} className="flex justify-between gap-4 px-6 py-3.5">
+                <div
+                  key={zeit.tage}
+                  className="flex justify-between gap-4 border-b border-ink-100/15 py-3.5"
+                >
                   <dt className="text-sm text-ink-400">{zeit.tage}</dt>
-                  <dd className="text-right text-sm text-ink-100">{zeit.zeit}</dd>
+                  <dd className="text-right font-mono text-datum text-ink-100">
+                    {zeit.zeit}
+                  </dd>
                 </div>
               ))}
             </dl>
-            <p className="border-t border-ink-100/10 bg-flare-500/[0.06] px-6 py-4 text-sm leading-relaxed text-ink-200">
+            <p className="mt-5 border-l-2 border-flare-500 py-1 pl-5 text-sm leading-relaxed text-ink-300">
               Während laufender Veranstaltungen sind wir am Platz – dann antworten wir,
               sobald der Aufbau steht.
             </p>
@@ -76,7 +82,7 @@ export default function KontaktSeite() {
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             {/* --- Formular ------------------------------------------------ */}
             <Reveal className="lg:col-span-7">
-              <h2 className="text-h3 text-white">Anfrage senden</h2>
+              <h2 className="text-h3 uppercase text-white">Anfrage senden</h2>
               <p className="mt-3 mb-10 text-ink-400">
                 Je mehr wir vorab wissen, desto genauer wird das Angebot.
               </p>
@@ -85,12 +91,12 @@ export default function KontaktSeite() {
 
             {/* --- Direktkontakt ------------------------------------------- */}
             <Reveal verzoegerung={120} className="lg:col-span-5">
-              <h2 className="text-h3 text-white">Direkt erreichen</h2>
+              <h2 className="text-h3 uppercase text-white">Direkt erreichen</h2>
               <p className="mt-3 mb-10 text-ink-400">
                 Lieber persönlich? Kein Problem – wir gehen ans Telefon.
               </p>
 
-              <ul className="space-y-px overflow-hidden rounded-card border border-ink-100/10">
+              <ul className="border-t border-ink-100/15">
                 {direktkontakt.map((eintrag) => (
                   <li key={eintrag.label}>
                     <a
@@ -98,16 +104,16 @@ export default function KontaktSeite() {
                       {...(eintrag.extern
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="group flex items-start gap-4 bg-ink-900 p-6 transition-colors hover:bg-ink-880"
+                      className="group flex items-start gap-4 border-b border-ink-100/15 py-5 transition-colors hover:border-flare-500/50"
                     >
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs border border-flare-500/25 bg-flare-500/8 text-flare-400 transition-colors group-hover:bg-flare-500 group-hover:text-ink-950">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center border border-flare-500/30 text-flare-400 transition-colors group-hover:border-flare-500 group-hover:bg-flare-500 group-hover:text-ink-950">
                         <eintrag.icon className="h-5 w-5" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-display text-[0.7rem] font-semibold tracking-[0.18em] text-ink-500 uppercase">
+                        <span className="block font-mono text-[0.6rem] tracking-[0.16em] text-ink-500 uppercase">
                           {eintrag.label}
                         </span>
-                        <span className="mt-1.5 block font-display text-base font-semibold break-words text-white transition-colors group-hover:text-flare-400">
+                        <span className="mt-1.5 block font-mono text-base break-words text-white transition-colors group-hover:text-flare-400">
                           {eintrag.wert}
                         </span>
                         <span className="mt-1.5 block text-xs text-ink-500">
@@ -120,12 +126,12 @@ export default function KontaktSeite() {
               </ul>
 
               {/* Anschrift – die Zeiten stehen bereits im Seitenkopf */}
-              <div className="mt-5 rounded-card border border-ink-100/10 bg-ink-900 p-6">
-                <p className="flex items-center gap-2.5 font-display text-[0.7rem] font-semibold tracking-[0.18em] text-ink-500 uppercase">
+              <div className="mt-8">
+                <p className="flex items-center gap-2.5 border-b border-ink-100/15 pb-3 font-mono text-label text-ink-500 uppercase">
                   <IconOrt className="h-4 w-4 text-flare-500" />
                   Anschrift
                 </p>
-                <address className="mt-3 text-sm leading-relaxed text-ink-200 not-italic">
+                <address className="mt-4 font-mono text-datum leading-relaxed text-ink-200 not-italic">
                   {site.legalName}
                   <br />
                   {site.adresse.strasse}
@@ -139,15 +145,12 @@ export default function KontaktSeite() {
       </section>
 
       {/* --- Karte ---------------------------------------------------------- */}
-      <section className="section-y-sm border-t border-ink-100/10 bg-ink-900">
+      <section className="planraster section-y-sm border-t border-ink-100/12 bg-ink-900">
         <div className="container-page">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="flex items-center gap-3 font-display text-eyebrow text-flare-400 uppercase">
-                <span aria-hidden="true" className="h-px w-7 bg-flare-500" />
-                Standort
-              </p>
-              <h2 className="mt-5 text-h3 text-white">
+              <p className="font-mono text-label text-flare-400 uppercase">Standort</p>
+              <h2 className="mt-5 text-h3 uppercase text-white">
                 Halle und Werkstatt in {site.adresse.ort}
               </h2>
               <p className="mt-4 leading-relaxed text-ink-400">
