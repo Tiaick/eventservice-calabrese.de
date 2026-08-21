@@ -48,6 +48,19 @@ Standmanagement, Sponsoring.
 - **Gastronomie und Sponsoring** sind auf der Startseite zusätzlich als Abschnitt
   *Refinanzierung* zusammengefasst – das ist das Argument für knappe Haushalte.
 - Der Ablauf einer Zusammenarbeit mit Verwaltungen liegt in `kommunenAblauf`.
+- **Die oberste Zeile der Startseite nennt bewusst keine Zielgruppe** („Veranstaltungen
+  jeder Art"). Städte und Gemeinden bleiben als Schwerpunkt in Abschnitt 03 und im
+  Paket „Veranstaltung komplett" sichtbar, schließen aber keine anderen Anlässe aus.
+
+### Preise: nur Bühnen öffentlich
+
+Ab-Preise stehen **ausschließlich bei den Bühnen** (Startseite, `/leistungen#buehnen`,
+`/preise`). Licht, Ton, Special Effects, Gastronomie, Standmanagement, Sponsoring und
+die Gesamtbetreuung sind auf `auf Anfrage` gesetzt – so gewünscht, weil der Aufwand zu
+stark vom Einzelfall abhängt. Wer weitere Positionen öffnen oder schließen will, ändert
+in `lib/content.ts` das Feld `preis` (Preistabelle) beziehungsweise `abPreis`
+(Leistungskarten). Ausgenommen ist bewusst das Komplettpaket XXL: Es trägt weiterhin
+einen Paketpreis, weil es als Gesamtangebot und nicht als Einzelposition auftritt.
 
 ## Design-System
 
@@ -104,7 +117,10 @@ dem Livegang gesetzt sein.**
    Standmanagement, Sponsoring) sind fachlich plausibel formuliert, aber nicht mit dem
    Betrieb abgestimmt. Vor dem Livegang inhaltlich prüfen – besonders, welche Leistungen
    tatsächlich selbst erbracht und welche zugekauft werden.
-2. **Telefon- und WhatsApp-Nummer** in `lib/site.ts` sind Platzhalter
+2. **Telefon- und WhatsApp-Nummer** in `lib/site.ts` sind noch Platzhalter
+   (`04192 000000`). Vorgesehen ist die Mobilnummer des Inhabers – sobald sie vorliegt,
+   in `site.telefon` und `site.whatsapp` eintragen. Die E-Mail-Adresse ist bereits die
+   echte (`kontakt@eventservice-calabrese.de`)
 3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
 4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und

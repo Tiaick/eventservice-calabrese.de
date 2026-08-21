@@ -47,7 +47,7 @@ export function Hero() {
           {/* Schlagzeile */}
           <div className="lg:col-span-8">
             <p className="font-mono text-label text-flare-400 uppercase">
-              Veranstaltungspartner für Städte &amp; Gemeinden
+              Veranstaltungen jeder Art · Norddeutschland
             </p>
 
             {/* Der Zeilenumbruch trägt die Aussage und bleibt deshalb manuell. */}
@@ -63,14 +63,14 @@ export function Hero() {
           {/* Randspalte mit Eckdaten */}
           <div className="lg:col-span-4 lg:pb-3">
             <p className="max-w-md text-lead text-ink-200">
-              Konzeption, Organisation und alle Gewerke aus einer Hand – von der
-              ersten Planung bis zur Abrechnung. Von {site.adresse.ort} aus in ganz
-              Norddeutschland.
+              Ob Stadtfest, Firmenjubiläum oder Vereinsfeier: Konzeption, Organisation
+              und alle Gewerke aus einer Hand – von der ersten Planung bis zur
+              Abrechnung. Von {site.adresse.ort} aus in ganz Norddeutschland.
             </p>
 
             <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-ink-100/15 pt-6">
               {[
-                { k: "Für", v: "Städte & Gemeinden" },
+                { k: "Gebiet", v: "Norddeutschland" },
                 { k: "Gewerke", v: "8 aus einer Hand" },
                 { k: "Seit", v: "über 15 Jahren" },
                 { k: "Events", v: "300+" },

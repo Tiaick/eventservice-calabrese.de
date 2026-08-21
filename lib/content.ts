@@ -110,7 +110,6 @@ export const leistungen: Leistung[] = [
       { titel: "Personal", wert: "Lichttechniker fährt die Show auf Wunsch live" },
     ],
     kenngroesse: "Licht · Effekte · Lasershow",
-    abPreis: "ab 700 €",
     bild: "/images/platzhalter-lichttechnik.jpg",
     bildAlt:
       "Traversenkonstruktion mit goldgelben Scheinwerfern über einer Konzertbühne",
@@ -132,7 +131,6 @@ export const leistungen: Leistung[] = [
       { titel: "Pegel", wert: "Einmessung mit Blick auf die Auflagen zum Immissionsschutz" },
     ],
     kenngroesse: "bis 5.000 Personen Open Air",
-    abPreis: "ab 900 €",
     bild: "/images/platzhalter-tontechnik.jpg",
     bildAlt:
       "Konzertbühne in blau-violettem Licht, Musiker am Pult, Publikum mit erhobenen Händen",
@@ -241,6 +239,7 @@ export type Preispaket = {
   id: string;
   kategorie: "Bühne" | "Technik" | "Komplett" | "Betreuung";
   titel: string;
+  /** Entweder ein Ab-Preis wie "790 €" oder "auf Anfrage". */
   preis: string;
   preisZusatz: string;
   beschreibung: string;
@@ -306,8 +305,8 @@ export const preispakete: Preispaket[] = [
     id: "lichtpaket-xl",
     kategorie: "Technik",
     titel: "Lichtpaket XL",
-    preis: "700 €",
-    preisZusatz: "ab, netto pro Tag",
+    preis: "auf Anfrage",
+    preisZusatz: "individuelles Angebot",
     beschreibung:
       "Das komplette Lichtset für eine Bühne, programmiert auf Ihren Programmablauf.",
     leistungen: [
@@ -322,8 +321,8 @@ export const preispakete: Preispaket[] = [
     id: "pa-xxl",
     kategorie: "Technik",
     titel: "PA-Beschallung XXL",
-    preis: "900 €",
-    preisZusatz: "ab, netto pro Tag",
+    preis: "auf Anfrage",
+    preisZusatz: "individuelles Angebot",
     beschreibung:
       "Line-Array-System für große Flächen – bis zu 5.000 Personen im Open Air.",
     leistungen: [
@@ -338,8 +337,8 @@ export const preispakete: Preispaket[] = [
     id: "special-effects",
     kategorie: "Technik",
     titel: "Special Effects",
-    preis: "150 €",
-    preisZusatz: "ab, netto pro Einsatz",
+    preis: "auf Anfrage",
+    preisZusatz: "individuelles Angebot",
     beschreibung:
       "Feuer, CO₂ und Konfetti – einzeln buchbar oder als abgestimmte Effektstrecke.",
     leistungen: [

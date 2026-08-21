@@ -23,11 +23,11 @@ import { ButtonLink } from "@/components/ui/button";
 import { kommunenAblauf, leistungen } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Veranstaltungspartner für Städte & Gemeinden",
+  title: "Veranstaltungen jeder Art – aus einer Hand",
   description:
     "Konzeption, Veranstaltungsorganisation, Bühne, Licht, Ton, Gastronomie, Standmanagement " +
-    "und Sponsoring aus einer Hand – für Stadtfeste, Gemeindeveranstaltungen und Großveranstaltungen " +
-    "in Norddeutschland.",
+    "und Sponsoring aus einer Hand – für Veranstaltungen jeder Art in Norddeutschland, von der " +
+    "Vereinsfeier bis zum Stadtfest.",
   alternates: { canonical: "/" },
 };
 

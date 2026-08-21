@@ -10,8 +10,8 @@ import { preispakete } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Preise & Pakete",
   description:
-    "Bühnen ab 400 €, Pultus 48 ab 790 €, Lichtpaket XL ab 700 €, PA-Beschallung ab 900 € " +
-    "und das Komplettpaket XXL ab 1.490 € pro Tag. Alle Preise netto als Beispielangebote.",
+    "Bühnen ab 400 €, Pultus 48 ab 790 €, Bühne XXL ab 1.200 € und das Komplettpaket XXL " +
+    "ab 1.490 € pro Tag. Licht, Ton und Effekte kalkulieren wir individuell. Alle Preise netto.",
   alternates: { canonical: "/preise" },
 };
 
@@ -48,7 +48,7 @@ export default function PreiseSeite() {
         blatt="Blatt 02"
         marke="Preise & Pakete"
         titel="Was es kostet – bevor Sie fragen müssen"
-        lead="Wir halten unsere Preise offen. Die folgenden Positionen decken den größten Teil unserer Anfragen ab; alles darüber hinaus rechnen wir Ihnen individuell aus."
+        lead="Bei den Bühnen nennen wir unsere Ab-Preise offen – das ist die Position, die am häufigsten angefragt wird. Technik, Gastronomie und Betreuung hängen zu stark vom Einzelfall ab; die kalkulieren wir für Sie individuell."
         bild="/images/platzhalter-preise-mainstage.jpg"
         bildAlt="Große Festivalbühne mit Traversentürmen in violettem Licht"
       />

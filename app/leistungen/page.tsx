@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Leistungen",
   description:
-    "Bühnen, Tontechnik, Lichttechnik, Special Effects, Lasershow und Gastro-Kooperation – " +
-    "alle Leistungen von Eventservice Calabrese im Detail.",
+    "Konzeption, Veranstaltungsorganisation, Bühne, Licht, Ton, Gastronomie, Standmanagement " +
+    "und Sponsoring – alle Leistungen von Eventservice Calabrese im Detail.",
   alternates: { canonical: "/leistungen" },
 };
 

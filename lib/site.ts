@@ -2,20 +2,22 @@
  * Stammdaten des Betriebs – eine Quelle für Header, Footer, Kontaktseite,
  * strukturierte Daten und Metadaten.
  *
- * PLATZHALTER: Telefonnummer und WhatsApp-Nummer sind noch nicht die echten
- * Anschlussnummern. Vor dem Livegang hier zentral ersetzen, dann ziehen alle
- * tel:- und wa.me-Links automatisch nach.
+ * Die E-Mail-Adresse ist die echte Adresse des Betriebs.
+ *
+ * PLATZHALTER: Telefon- und WhatsApp-Nummer sind noch nicht die echten
+ * Anschlussnummern – vorgesehen ist die Mobilnummer des Inhabers. Hier zentral
+ * ersetzen, dann ziehen alle tel:- und wa.me-Links automatisch nach.
  */
 
 export const site = {
   name: "Eventservice Calabrese",
   legalName: "Eventservice Calabrese",
-  tagline: "Veranstaltungspartner für Städte & Gemeinden",
+  tagline: "Veranstaltungen jeder Art – aus einer Hand",
   kurzclaim: "Konzeption · Veranstaltungsorganisation · Bühne · Licht · Ton · Gastronomie · Standmanagement · Sponsoring",
   description:
-    "Gesamtdienstleister für Stadtfeste, Gemeindeveranstaltungen und Großveranstaltungen in Norddeutschland. " +
-    "Konzeption, Veranstaltungsorganisation, Bühne, Licht, Ton, Gastronomie, Standmanagement und Sponsoring aus einer Hand – " +
-    "seit über 15 Jahren, mit Sitz in Bad Bramstedt.",
+    "Gesamtdienstleister für Veranstaltungen jeder Art in Norddeutschland – von der Vereinsfeier " +
+    "über das Firmenevent bis zum Stadtfest. Konzeption, Veranstaltungsorganisation, Bühne, Licht, " +
+    "Ton, Gastronomie, Standmanagement und Sponsoring aus einer Hand, seit über 15 Jahren.",
   url: "https://eventservice-calabrese.de",
 
   adresse: {
@@ -40,7 +42,7 @@ export const site = {
     /* wa.me erwartet die Nummer international, ohne + und ohne Leerzeichen */
     nummer: "494192000000",
   },
-  email: "info@eventservice-calabrese.de",
+  email: "kontakt@eventservice-calabrese.de",
 
   oeffnungszeiten: [
     { tage: "Montag – Freitag", zeit: "09:00 – 18:00 Uhr" },
