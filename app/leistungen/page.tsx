@@ -23,32 +23,39 @@ export default function LeistungenSeite() {
       <PageHeader
         blatt="Blatt 01"
         marke="Leistungen"
-        titel="Was wir für Ihre Veranstaltung aufbauen"
-        lead="Sechs Bereiche, einzeln buchbar oder als Komplettpaket. Alles Equipment steht in unserer eigenen Halle – was hier steht, können wir auch liefern."
+        titel="Was wir für Ihre Veranstaltung übernehmen"
+        lead="Acht Bereiche, einzeln buchbar oder komplett. Konzeption und Organisation stehen bewusst vorn: Sie entscheiden, wir kümmern uns darum, dass alles zusammenpasst."
         beiwerk={
           /* Kein Wiederholen der Sprungnavigation darunter, sondern der Hinweis
              auf das Paket, in dem die meisten Anfragen enden. */
           <div className="border-l-2 border-flare-500 bg-flare-500/[0.05] p-6">
             <p className="font-mono text-[0.6rem] tracking-[0.16em] text-flare-400 uppercase">
-              Am häufigsten gebucht
+              Für Städte &amp; Gemeinden
             </p>
             <h2 className="mt-3 font-display text-h3 uppercase text-white">
-              Komplettpaket XXL
+              Veranstaltung komplett
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-400">
-              Bühne, Lichtpaket XL und PA-Beschallung zusammen – ein Aufbautag, ein
-              Team, ein Angebot.
+              Alle acht Bereiche über einen Vertrag: Konzeption, Organisation, Technik,
+              Gastronomie, Stände und Sponsoring – mit einer Ansprechperson und einer
+              Abrechnung.
             </p>
-            <p className="mt-5 flex items-baseline gap-2">
-              <span className="font-mono text-2xl font-medium text-flare-400 tabular-nums">
-                ab 1.490 €
-              </span>
-              <span className="font-mono text-[0.6rem] tracking-[0.12em] text-ink-500 uppercase">
-                netto/Tag
-              </span>
-            </p>
+            <dl className="mt-5 border-t border-flare-500/20">
+              {[
+                { k: "Vertrag", v: "eine Beauftragung" },
+                { k: "Vor Ort", v: "eine Ansprechperson" },
+                { k: "Abschluss", v: "eine Abrechnung" },
+              ].map((z) => (
+                <div key={z.k} className="flex gap-4 border-b border-flare-500/20 py-2.5">
+                  <dt className="w-24 shrink-0 font-mono text-[0.6rem] tracking-[0.14em] text-ink-500 uppercase">
+                    {z.k}
+                  </dt>
+                  <dd className="font-mono text-datum text-ink-100">{z.v}</dd>
+                </div>
+              ))}
+            </dl>
             <ButtonLink href="/preise" variante="sekundaer" className="mt-5 w-full">
-              Alle Preise ansehen
+              Preise ansehen
             </ButtonLink>
           </div>
         }

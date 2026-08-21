@@ -47,20 +47,29 @@ export function LocalBusinessSchema() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Veranstaltungstechnik",
-      itemListElement: preispakete.map((paket) => ({
-        "@type": "Offer",
-        name: paket.titel,
-        description: paket.beschreibung,
-        priceCurrency: "EUR",
-        /* Ab-Preise: Ziffernwert ohne Tausenderpunkt und Währungszeichen */
-        price: paket.preis.replace(/[^\d]/g, ""),
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-          minPrice: paket.preis.replace(/[^\d]/g, ""),
-          valueAddedTaxIncluded: false,
-        },
-      })),
+      /* Positionen ohne bezifferten Preis ("auf Anfrage") werden ohne
+         Preisangabe ausgezeichnet – ein leeres price-Feld wäre ungültig. */
+      itemListElement: preispakete.map((paket) => {
+        const ziffern = paket.preis.replace(/[^\d]/g, "");
+
+        return {
+          "@type": "Offer",
+          name: paket.titel,
+          description: paket.beschreibung,
+          ...(ziffern
+            ? {
+                priceCurrency: "EUR",
+                price: ziffern,
+                priceSpecification: {
+                  "@type": "PriceSpecification",
+                  priceCurrency: "EUR",
+                  minPrice: ziffern,
+                  valueAddedTaxIncluded: false,
+                },
+              }
+            : { availability: "https://schema.org/InStock" }),
+        };
+      }),
     },
   };
 

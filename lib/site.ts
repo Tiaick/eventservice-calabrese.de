@@ -10,10 +10,12 @@
 export const site = {
   name: "Eventservice Calabrese",
   legalName: "Eventservice Calabrese",
-  tagline: "Veranstaltungstechnik aus Norddeutschland",
+  tagline: "Veranstaltungspartner für Städte & Gemeinden",
+  kurzclaim: "Konzeption · Veranstaltungsorganisation · Bühne · Licht · Ton · Gastronomie · Standmanagement · Sponsoring",
   description:
-    "Bühnen, Ton, Licht, Special Effects und Lasershows aus Bad Bramstedt. " +
-    "Seit über 15 Jahren der verlässliche Partner für Stadtfeste, Firmenevents und Open Airs in Norddeutschland.",
+    "Gesamtdienstleister für Stadtfeste, Gemeindeveranstaltungen und Großveranstaltungen in Norddeutschland. " +
+    "Konzeption, Veranstaltungsorganisation, Bühne, Licht, Ton, Gastronomie, Standmanagement und Sponsoring aus einer Hand – " +
+    "seit über 15 Jahren, mit Sitz in Bad Bramstedt.",
   url: "https://eventservice-calabrese.de",
 
   adresse: {

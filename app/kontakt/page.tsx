@@ -49,7 +49,7 @@ export default function KontaktSeite() {
         blatt="Blatt 05"
         marke="Kontakt"
         titel="Sprechen wir über Ihre Veranstaltung"
-        lead="Schildern Sie uns kurz, was Sie vorhaben. Sie bekommen von uns eine ehrliche Einschätzung und ein Angebot mit klaren Positionen – in der Regel innerhalb eines Werktags."
+        lead="Schildern Sie uns kurz, was Sie vorhaben. Sie bekommen von uns eine ehrliche Einschätzung und ein Angebot mit klaren Positionen, das sich in eine Gremienvorlage übernehmen lässt – in der Regel innerhalb eines Werktags."
         beiwerk={
           <div>
             <p className="flex items-center gap-2.5 border-b border-ink-100/15 pb-3 font-mono text-label text-ink-500 uppercase">

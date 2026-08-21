@@ -67,7 +67,10 @@ export function ServiceCard({
         {abPreis ? <span className="text-flare-400">{abPreis}</span> : null}
       </p>
 
-      <h3 className="mt-4 font-display text-h3 text-white transition-colors duration-200 group-hover:text-flare-400">
+      {/* Silbentrennung ist hier nicht optional: In der schmalen Spalte läuft
+          ein Wort wie "Veranstaltungsorganisation" sonst in die Nachbarspalte.
+          Getrennt wird nach den Regeln von lang="de" aus dem Root-Element. */}
+      <h3 className="mt-4 font-display text-2xl leading-tight font-semibold tracking-[-0.01em] break-words hyphens-auto text-white transition-colors duration-200 group-hover:text-flare-400">
         {titel}
       </h3>
 

@@ -30,20 +30,62 @@ export type Leistung = {
 
 export const leistungen: Leistung[] = [
   {
+    id: "konzeption",
+    label: "Konzeption",
+    eyebrow: "Konzeption",
+    titel: "Vom ersten Gespräch zum tragfähigen Konzept",
+    lead: "Wir entwickeln aus Anlass, Ort und Budget ein Veranstaltungskonzept, das sich genehmigen, finanzieren und umsetzen lässt.",
+    text: [
+      "Am Anfang steht selten eine fertige Vorstellung, sondern ein Termin, ein Platz und ein Budget. Wir sehen uns die Fläche an, klären, was dort tatsächlich möglich ist, und machen daraus einen Vorschlag: Wo steht die Bühne, wie laufen die Besucherströme, wo liegen Rettungswege, welche Gewerke werden gebraucht.",
+      "Sie bekommen von uns einen Flächenplan, einen Ablauf und einen Budgetrahmen, mit dem Sie in die Gremien gehen können. Was nicht genehmigungsfähig oder nicht finanzierbar ist, sagen wir vorher – nicht, wenn der Termin schon feststeht.",
+    ],
+    details: [
+      { titel: "Bestandsaufnahme", wert: "Ortsbegehung, Flächen, Zufahrten, Stromversorgung" },
+      { titel: "Planung", wert: "Flächenplan, Bühnenstandort, Besucherführung" },
+      { titel: "Budget", wert: "belastbarer Kostenrahmen für die Gremienvorlage" },
+      { titel: "Genehmigung", wert: "Abstimmung auf die Auflagen von Ordnungsamt und Feuerwehr" },
+    ],
+    kenngroesse: "Konzept · Flächenplan · Budgetrahmen",
+    bild: "/images/platzhalter-konzeption.jpg",
+    bildAlt:
+      "Große Bühne mit Projektionsfläche in einer abgedunkelten Halle, davor ein volles Publikum",
+  },
+  {
+    id: "veranstaltungsorganisation",
+    label: "Veranstaltungsorganisation",
+    eyebrow: "Organisation",
+    titel: "Einer koordiniert – und ist am Veranstaltungstag vor Ort",
+    lead: "Wir übernehmen die Ablaufplanung, die Abstimmung mit den Behörden und die Koordination aller Gewerke. Sie behalten die Entscheidungen, wir das Klein-Klein.",
+    text: [
+      "Eine Veranstaltung besteht aus vielen Beteiligten, die alle zur richtigen Zeit am richtigen Platz sein müssen: Technik, Gastronomie, Beschicker, Sicherheitsdienst, Sanitäter, Reinigung. Wir bauen daraus einen Zeit- und Aufbauplan, holen die nötigen Abstimmungen ein und sorgen dafür, dass niemand vor verschlossenem Tor steht.",
+      "Am Veranstaltungstag ist eine feste Ansprechperson von uns durchgehend vor Ort – erreichbar für Sie, für die Behörden und für alle Gewerke. Wenn etwas nicht nach Plan läuft, wird es dort entschieden und nicht erst am Montag besprochen.",
+    ],
+    details: [
+      { titel: "Ablaufplanung", wert: "Zeit- und Aufbauplan über alle Gewerke" },
+      { titel: "Behörden", wert: "Abstimmung mit Ordnungsamt, Feuerwehr und Polizei" },
+      { titel: "Sicherheit", wert: "Sicherheitskonzept, Rettungswege, Verkehrsführung" },
+      { titel: "Vor Ort", wert: "feste Ansprechperson während der gesamten Veranstaltung" },
+    ],
+    kenngroesse: "eine Ansprechperson · alle Gewerke",
+    bild: "/images/platzhalter-organisation.jpg",
+    bildAlt:
+      "Veranstaltung in einem großen Saal mit Traversenkonstruktion, Leinwand und zahlreichen Gästen",
+  },
+  {
     id: "buehnen",
-    label: "Bühnen",
+    label: "Bühne",
     eyebrow: "Bühnenbau",
     titel: "Bühnen, die tragen",
-    lead: "Vom Dorffest bis zum Open Air mit mehreren tausend Besuchern – wir bauen die Bühne, die zu Ihrer Veranstaltung passt, und bringen sie sicher über die Bühne.",
+    lead: "Vom Dorffest bis zum Stadtfest mit mehreren tausend Besuchern – wir bauen die Bühne, die zu Ihrer Veranstaltung passt, und liefern die Statik gleich mit.",
     text: [
-      "Unser Arbeitspferd ist die Pultus 48: 6 × 8 Meter, 48 Quadratmeter bespielbare Fläche, komplett mit Treppe, Geländer und Gaze. Sie ist in wenigen Stunden aufgebaut, wetterfest und für die allermeisten Stadtfeste, Vereinsjubiläen und Firmenfeiern genau die richtige Größe.",
-      "Reicht das nicht, geht mehr: Für kleinere Bühnenprogramme haben wir eine kompakte Variante um 30 Quadratmeter, für große Produktionen bauen wir Bühnen jenseits von 60 Quadratmetern inklusive Dach und Traversenkonstruktion. Statik, Ballastierung und Aufbaupläne kommen von uns – Sie bekommen eine Bühne, die abgenommen werden kann.",
+      "Unser Arbeitspferd ist die Pultus 48: 6 × 8 Meter, 48 Quadratmeter bespielbare Fläche, komplett mit Treppe, Geländer und Gaze. Sie ist in wenigen Stunden aufgebaut, wetterfest und für die allermeisten Stadtfeste, Jubiläen und Bürgerempfänge genau die richtige Größe.",
+      "Reicht das nicht, geht mehr: Für kleinere Programme haben wir eine kompakte Variante um 30 Quadratmeter, für große Produktionen bauen wir Bühnen jenseits von 60 Quadratmetern inklusive Dach und Traversenkonstruktion. Statik, Ballastierung und Aufbaupläne kommen von uns – Sie bekommen eine Bühne, die abgenommen werden kann.",
     ],
     details: [
       { titel: "Pultus 48", wert: "6 × 8 m, 48 m² – inkl. Treppe, Geländer, Gaze" },
       { titel: "Kompaktbühne", wert: "rund 30 m² für kleinere Programme" },
       { titel: "Bühne XXL", wert: "über 60 m² mit Dach und Traversenkonstruktion" },
-      { titel: "Aufbau", wert: "durch eigenes, eingespieltes Team" },
+      { titel: "Nachweise", wert: "Statik, Ballastierungsplan, Aufbaudokumentation" },
     ],
     kenngroesse: "6,00 × 8,00 m · 48 m²",
     abPreis: "ab 400 €",
@@ -52,20 +94,42 @@ export const leistungen: Leistung[] = [
       "Bühne bei Nacht, von warmem Gegenlicht ausgeleuchtet, davor Publikum in Silhouette",
   },
   {
+    id: "lichttechnik",
+    label: "Licht",
+    eyebrow: "Licht",
+    titel: "Licht macht aus einer Bühne eine Show",
+    lead: "Movingheads, Beams, Washes, Blinder und Hazer – abgestimmt programmiert statt wahllos blinkend. Auf Wunsch mit Effekten und zertifizierter Lasershow.",
+    text: [
+      "Unser Lichtpaket XL bringt alles mit, was eine Bühne zum Leuchten braucht: Movingheads für bewegte Gobos, Beams für scharfe Lichtkegel, Washes für die Flächen, Blinder für die Momente, in denen es knallen soll, und einen Hazer, damit man die Lichtstrahlen überhaupt sieht.",
+      "Dazu kommt auf Wunsch alles, was den Abend zuspitzt: Explo-Flamer mit Feuerbällen von sechs bis zwanzig Metern, CO₂-Jets, Streamer und Konfetti sowie eine zertifizierte Lasershow, gefahren von geschulten Laserschutzbeauftragten. Effekte sind bei uns keine Deko, sondern werden auf den Ablauf getaktet – und laufen immer nach Sicherheitskonzept.",
+    ],
+    details: [
+      { titel: "Lichtpaket XL", wert: "Movingheads, Beams, Washes, Blinder, Hazer" },
+      { titel: "Special Effects", wert: "Flammeneffekte 6 – 20 m, CO₂, Streamer, Konfetti" },
+      { titel: "Lasershow", wert: "zertifizierte Anlagen, geschulte Laserschutzbeauftragte" },
+      { titel: "Personal", wert: "Lichttechniker fährt die Show auf Wunsch live" },
+    ],
+    kenngroesse: "Licht · Effekte · Lasershow",
+    abPreis: "ab 700 €",
+    bild: "/images/platzhalter-lichttechnik.jpg",
+    bildAlt:
+      "Traversenkonstruktion mit goldgelben Scheinwerfern über einer Konzertbühne",
+  },
+  {
     id: "tontechnik",
-    label: "Tontechnik",
+    label: "Ton",
     eyebrow: "Beschallung",
     titel: "Ton, der bis nach hinten trägt",
-    lead: "Line-Array-Systeme von RCF und L-Acoustics für Flächen, auf denen es auch in der letzten Reihe noch gut klingen soll.",
+    lead: "Line-Array-Systeme von RCF und L-Acoustics für Flächen, auf denen die Ansprache vorn nicht wehtun und hinten trotzdem ankommen soll.",
     text: [
-      "Beschallung ist kein Zufall, sondern Planung. Wir rechnen die Fläche durch, hängen das passende System und richten es so ein, dass der Pegel vorn nicht wehtut und hinten trotzdem ankommt. Für große Open Airs setzen wir Line Arrays ein, die bis zu 5.000 Personen sauber versorgen.",
-      "Für kleinere Veranstaltungen tut es oft ein konventionelles System – auch das haben wir im Lager, inklusive Monitoring, Funkstrecken und Mischpult. Auf Wunsch übernimmt einer unserer Techniker den ganzen Abend am FOH-Platz, damit sich niemand aus Ihrem Team um den Sound kümmern muss.",
+      "Beschallung ist kein Zufall, sondern Planung. Wir rechnen die Fläche durch, hängen das passende System und richten es so ein, dass der Pegel an den Anwohnergrenzen eingehalten wird und im Publikum trotzdem alles verständlich bleibt. Für große Open Airs setzen wir Line Arrays ein, die bis zu 5.000 Personen sauber versorgen.",
+      "Für Bürgerempfänge, Ansprachen und kleinere Bühnenprogramme tut es ein konventionelles System – auch das haben wir im Lager, inklusive Rednerpult-Mikrofonen, Funkstrecken und Mischpult. Auf Wunsch übernimmt einer unserer Techniker den ganzen Tag am FOH-Platz.",
     ],
     details: [
       { titel: "Line Arrays", wert: "RCF und L-Acoustics, bis 5.000 Personen Open Air" },
-      { titel: "Konventionelle Systeme", wert: "für Säle, Zelte und kleinere Flächen" },
-      { titel: "Zubehör", wert: "Monitoring, Funkstrecken, Mischpult, FOH-Platz" },
-      { titel: "Personal", wert: "Tontechniker auf Wunsch für die ganze Veranstaltung" },
+      { titel: "Konventionelle Systeme", wert: "für Säle, Zelte und Ansprachen" },
+      { titel: "Zubehör", wert: "Funkstrecken, Rednermikrofone, Monitoring, Mischpult" },
+      { titel: "Pegel", wert: "Einmessung mit Blick auf die Auflagen zum Immissionsschutz" },
     ],
     kenngroesse: "bis 5.000 Personen Open Air",
     abPreis: "ab 900 €",
@@ -74,101 +138,108 @@ export const leistungen: Leistung[] = [
       "Konzertbühne in blau-violettem Licht, Musiker am Pult, Publikum mit erhobenen Händen",
   },
   {
-    id: "lichttechnik",
-    label: "Lichttechnik",
-    eyebrow: "Licht",
-    titel: "Licht macht aus einer Bühne eine Show",
-    lead: "Movingheads, Beams, Washes, Blinder und Hazer – abgestimmt programmiert statt wahllos blinkend.",
+    id: "gastronomie",
+    label: "Gastronomie",
+    eyebrow: "Gastronomie",
+    titel: "Ausschank und Versorgung im eigenen Betrieb",
+    lead: "Bis zu 15 Schankwagen mit Personal, Kühlung und Abrechnung – auf Wunsch als Kooperation, bei der die Technik über den Getränkeverkauf finanziert wird.",
     text: [
-      "Unser Lichtpaket XL bringt alles mit, was eine Bühne zum Leuchten braucht: Movingheads für bewegte Gobos, Beams für scharfe Lichtkegel, Washes für die Flächen, Blinder für die Momente, in denen es knallen soll, und einen Hazer, damit man die Lichtstrahlen überhaupt sieht.",
-      "Wichtiger als die Geräteliste ist, was daraus wird. Wir programmieren das Licht auf Ihr Programm – ruhig und warm für die Ansprache, druckvoll für die Band, farbig für die Party danach. Auf Wunsch fährt ein Lichttechniker die Show live mit.",
+      "Die Gastronomie entscheidet mit darüber, ob ein Fest funktioniert: zu wenig Ausschank bedeutet lange Schlangen, zu viel bedeutet unnötige Kosten. Wir planen die Zahl der Ausschankstellen nach erwarteter Besucherzahl und Programmdauer, stellen die Wagen, das Personal und die Kühlung und rechnen am Ende sauber ab.",
+      "Für Kommunen und Vereine mit knappem Budget bieten wir zusätzlich ein Kooperationsmodell an: Wir stellen Bühne und Technik ohne Mietkosten und übernehmen dafür den Getränkeausschank. Ob das für Ihre Veranstaltung aufgeht, rechnen wir vorher gemeinsam durch – das Modell trägt nicht bei jeder Größe.",
     ],
     details: [
-      { titel: "Lichtpaket XL", wert: "Movingheads, Beams, Washes, Blinder, Hazer" },
-      { titel: "Programmierung", wert: "auf Ablauf und Programm abgestimmt" },
-      { titel: "Traversen", wert: "Ground Support und Bühnendach-Rigging" },
-      { titel: "Personal", wert: "Lichttechniker fährt die Show auf Wunsch live" },
-    ],
-    kenngroesse: "Movingheads · Beams · Washes · Hazer",
-    abPreis: "ab 700 €",
-    bild: "/images/platzhalter-lichttechnik.jpg",
-    bildAlt:
-      "Traversenkonstruktion mit goldgelben Scheinwerfern über einer Konzertbühne",
-  },
-  {
-    id: "special-effects",
-    label: "Special Effects",
-    eyebrow: "Effekte",
-    titel: "Der Moment, über den danach geredet wird",
-    lead: "Feuerbälle bis 20 Meter, CO₂-Jets, Streamerkanonen und Konfetti – auf die Sekunde getimt.",
-    text: [
-      "Unsere Explo-Flamer schicken Feuerbälle zwischen sechs und zwanzig Metern in den Himmel. Dazu kommen CO₂-Jets für den kalten Nebelstoß, Streamerkanonen und Konfetti für den Schlussakkord. Effekte sind bei uns keine Deko, sondern werden auf den Ablauf getaktet – der Refrain, der Anstoß, der Countdown.",
-      "Alles läuft nach Sicherheitskonzept: Abstände, Windgrenzen, Brandwache und Abstimmung mit Ordnungsamt und Feuerwehr klären wir vorab mit Ihnen. Wer Feuer einsetzt, muss wissen, was er tut – wir tun das seit über 15 Jahren.",
-    ],
-    details: [
-      { titel: "Explo-Flamer", wert: "Feuerbälle von 6 bis 20 Metern Höhe" },
-      { titel: "CO₂-Jets", wert: "kalter Nebelstoß für Bühne und Tanzfläche" },
-      { titel: "Streamer & Konfetti", wert: "Kanonen für den großen Schlussmoment" },
-      { titel: "Sicherheit", wert: "Sicherheitskonzept, Abstände, Abstimmung mit Behörden" },
-    ],
-    kenngroesse: "Feuerbälle 6 – 20 m Höhe",
-    abPreis: "ab 150 €",
-    bild: "/images/platzhalter-special-effects.jpg",
-    bildAlt: "Konfettiregen über einer Menschenmenge vor blau beleuchteter Bühne",
-  },
-  {
-    id: "lasershow",
-    label: "Lasershow",
-    eyebrow: "Laser",
-    titel: "Lasershow – zertifiziert und sicher",
-    lead: "Weite Laserfächer über dem Publikum, gefahren von geschultem Personal nach geltenden Sicherheitsvorgaben.",
-    text: [
-      "Eine Lasershow ist der Effekt mit der größten Fernwirkung – und derjenige mit den strengsten Auflagen. Unsere Anlagen sind zertifiziert, unser Personal ist als Laserschutzbeauftragte geschult, und jede Show wird vor Ort eingemessen, bevor der erste Strahl über die Köpfe geht.",
-      "Wir fahren die Show passend zur Musik, kombiniert mit Haze und Licht, damit die Strahlen im Raum stehen. Ob als eigener Programmpunkt oder als Finale über der Bühne – wir stimmen das mit Ihnen und dem Veranstaltungsablauf ab.",
-    ],
-    details: [
-      { titel: "Zertifiziert", wert: "geprüfte Anlagen nach geltenden Sicherheitsvorgaben" },
-      { titel: "Laserschutz", wert: "geschulte Laserschutzbeauftragte vor Ort" },
-      { titel: "Einmessung", wert: "Justage und Publikumsabstand vor jeder Show" },
-      { titel: "Umsetzung", wert: "musiksynchron, kombiniert mit Haze und Licht" },
-    ],
-    kenngroesse: "zertifiziert · Laserschutz vor Ort",
-    bild: "/images/platzhalter-lasershow.jpg",
-    bildAlt: "Weiße Lichtfächer strahlen über eine dunkle Halle voller Menschen",
-  },
-  {
-    id: "gastro-kooperation",
-    label: "Gastro-Kooperation",
-    eyebrow: "Kooperation",
-    titel: "Bühne und Technik ohne Rechnung",
-    lead: "Unser Modell für Vereine und Veranstalter: Sie bekommen Bühne und Technik kostenlos, wir übernehmen den Getränkeausschank.",
-    text: [
-      "Viele Feste scheitern nicht an der Idee, sondern am Budget. Deshalb bieten wir ein Modell an, das ohne Technikrechnung auskommt: Wir stellen Bühne, Ton und Licht kostenlos, und im Gegenzug übernehmen wir den Getränkeverkauf auf Ihrer Veranstaltung.",
-      "Dafür bringen wir bis zu 15 Schankwagen mit, dazu Personal, Kühlung und Abrechnung. Für Sie bleibt der Aufwand klein und das Risiko überschaubar – Sie kümmern sich um Programm und Gäste, wir um Technik und Theke. Ob das Modell für Ihre Veranstaltung aufgeht, rechnen wir vorher gemeinsam durch.",
-    ],
-    details: [
-      { titel: "Das Modell", wert: "Bühne und Technik kostenlos gegen Getränkeausschank" },
       { titel: "Schankwagen", wert: "bis zu 15 Wagen, je nach Größe der Veranstaltung" },
-      { titel: "Inklusive", wert: "Ausschankpersonal, Kühlung, Abrechnung" },
-      { titel: "Vorab", wert: "gemeinsame Kalkulation, ob das Modell für Sie trägt" },
+      { titel: "Personal", wert: "Ausschankpersonal, Kühlung, Logistik" },
+      { titel: "Abrechnung", wert: "vollständige Abrechnung und Nachweis" },
+      { titel: "Kooperation", wert: "Technik gegen Getränkeausschank – nach gemeinsamer Kalkulation" },
     ],
     kenngroesse: "bis 15 Schankwagen",
-    bild: "/images/platzhalter-gastro-kooperation.jpg",
-    bildAlt: "Gäste stoßen bei einer Abendveranstaltung mit Weingläsern an",
+    bild: "/images/platzhalter-gastronomie.jpg",
+    bildAlt:
+      "Warm beleuchtete Ausschanktheke mit Gläsern und Hängeleuchten am Abend",
+  },
+  {
+    id: "standmanagement",
+    label: "Standmanagement",
+    eyebrow: "Standmanagement",
+    titel: "Standflächen vergeben, aufplanen und betreuen",
+    lead: "Wir übernehmen die Beschickerverwaltung: Ausschreibung der Standflächen, Aufplanung, Verträge, Anlieferung und Betreuung vor Ort.",
+    text: [
+      "Wer schon einmal ein Stadtfest beschickt hat, kennt den Aufwand: Anfragen sichten, Flächen vergeben, Verträge schließen, Strom und Wasser zuordnen, Anlieferzeiten staffeln und am Aufbautag alle einweisen. Diesen Teil nehmen wir Ihnen ab – von der Ausschreibung bis zur Standabnahme.",
+      "Sie legen fest, welche Art von Ständen Sie auf Ihrem Fest haben möchten und welche nicht. Wir setzen das um, halten die Belegung nach und sind am Aufbautag der Ansprechpartner für die Beschicker.",
+    ],
+    details: [
+      { titel: "Vergabe", wert: "Ausschreibung, Auswahl und Verträge der Beschicker" },
+      { titel: "Aufplanung", wert: "Standflächen, Strom- und Wasseranschlüsse, Zufahrten" },
+      { titel: "Anlieferung", wert: "gestaffelte Aufbauzeiten und Einweisung vor Ort" },
+      { titel: "Betreuung", wert: "Ansprechpartner für Beschicker während der Veranstaltung" },
+    ],
+    kenngroesse: "Vergabe · Aufplanung · Betreuung",
+    bild: "/images/platzhalter-standmanagement.jpg",
+    bildAlt:
+      "Blick von oben auf ein Veranstaltungsgelände mit Ständen, Bannern und Besuchern",
+  },
+  {
+    id: "sponsoring",
+    label: "Sponsoring",
+    eyebrow: "Sponsoring",
+    titel: "Damit sich die Veranstaltung mitfinanziert",
+    lead: "Wir sprechen Sponsoren an, entwickeln Werbeflächen und Gegenleistungen und setzen sie auf der Veranstaltung sichtbar um.",
+    text: [
+      "Kaum ein Stadtfest trägt sich allein aus dem Haushalt. Wir entwickeln deshalb ein Sponsoringkonzept, das zu Ihrer Veranstaltung und zu Ihrer Kommune passt: Welche Flächen und Nennungen gibt es, was ist eine angemessene Gegenleistung, und welche Unternehmen aus der Region kommen dafür infrage.",
+      "Die Ansprache übernehmen wir auf Wunsch komplett, ebenso die Umsetzung vor Ort – von der Bannerfläche an der Bühne bis zur Nennung in der Moderation. Was am Ende zusammengekommen ist, weisen wir Ihnen nachvollziehbar aus.",
+    ],
+    details: [
+      { titel: "Konzept", wert: "Sponsoringpakete mit klaren Gegenleistungen" },
+      { titel: "Akquise", wert: "Ansprache regionaler Unternehmen auf Wunsch durch uns" },
+      { titel: "Umsetzung", wert: "Werbeflächen, Banner, Nennungen im Programm" },
+      { titel: "Nachweis", wert: "Auswertung und Abrechnung der Sponsorenleistungen" },
+    ],
+    kenngroesse: "Konzept · Akquise · Umsetzung",
+    bild: "/images/platzhalter-sponsoring.jpg",
+    bildAlt:
+      "Straßenfest am Abend mit Lichterketten über der Menschenmenge",
+  },
+];
+
+/**
+ * Ablauf einer Zusammenarbeit mit Städten und Gemeinden.
+ * Die Reihenfolge entspricht dem, was Kommunen für eine Gremienvorlage brauchen.
+ */
+export const kommunenAblauf = [
+  {
+    titel: "Ortstermin und Bestandsaufnahme",
+    text: "Wir sehen uns die Fläche gemeinsam an: Zufahrten, Stromversorgung, Rettungswege, Nachbarschaft. Danach wissen beide Seiten, was dort realistisch möglich ist.",
+  },
+  {
+    titel: "Konzept und Kostenrahmen",
+    text: "Sie erhalten einen Flächenplan, einen Ablauf und ein Angebot mit klaren Positionen – in einer Form, die Sie direkt in die Gremien geben können.",
+  },
+  {
+    titel: "Abstimmung und Genehmigung",
+    text: "Wir stimmen Sicherheitskonzept, Verkehrsführung und Auflagen mit Ordnungsamt, Feuerwehr und Polizei ab und liefern die nötigen Nachweise.",
+  },
+  {
+    titel: "Aufbau und Durchführung",
+    text: "Alle Gewerke laufen über einen Zeitplan. Am Veranstaltungstag ist eine feste Ansprechperson von uns durchgehend vor Ort.",
+  },
+  {
+    titel: "Abbau und Abrechnung",
+    text: "Rückbau, Übergabe der Fläche und eine Abrechnung, die den Positionen des Angebots folgt – inklusive Nachweis über Gastronomie- und Sponsoringerlöse.",
   },
 ];
 
 /** Kennzahlen für die Stat-Bar. */
 export const kennzahlen = [
-  { wert: "15+", einheit: "Jahre", label: "Erfahrung in der Veranstaltungstechnik" },
-  { wert: "300+", einheit: "Events", label: "von der Dorfbühne bis zum Open Air" },
+  { wert: "15+", einheit: "Jahre", label: "Erfahrung in der Veranstaltungsbranche" },
+  { wert: "300+", einheit: "Events", label: "vom Bürgerempfang bis zum Stadtfest" },
+  { wert: "8", einheit: "Gewerke", label: "aus einer Hand – ein Ansprechpartner" },
   { wert: "98", einheit: "%", label: "zufriedene Kundinnen und Kunden" },
-  { wert: "5.000", einheit: "Gäste", label: "maximale Beschallung im Open Air" },
 ];
 
 export type Preispaket = {
   id: string;
-  kategorie: "Bühne" | "Technik" | "Komplett";
+  kategorie: "Bühne" | "Technik" | "Komplett" | "Betreuung";
   titel: string;
   preis: string;
   preisZusatz: string;
@@ -277,7 +348,24 @@ export const preispakete: Preispaket[] = [
       "Streamerkanonen und Konfetti",
       "Sicherheitskonzept und Betreuung",
     ],
-    anker: "/leistungen#special-effects",
+    anker: "/leistungen#lichttechnik",
+  },
+  {
+    id: "gesamtbetreuung",
+    kategorie: "Betreuung",
+    titel: "Veranstaltung komplett",
+    preis: "auf Anfrage",
+    preisZusatz: "individuelles Angebot",
+    beschreibung:
+      "Konzeption, Organisation und alle Gewerke für Städte, Gemeinden und Großveranstaltungen – von der ersten Planung bis zur Abrechnung.",
+    leistungen: [
+      "Konzeption, Flächenplan und Kostenrahmen",
+      "Behördenabstimmung und Sicherheitskonzept",
+      "Bühne, Licht und Ton inklusive Personal",
+      "Gastronomie, Standmanagement und Sponsoring",
+    ],
+    badge: "Für Kommunen",
+    anker: "/leistungen#konzeption",
   },
   {
     id: "komplettpaket-xxl",

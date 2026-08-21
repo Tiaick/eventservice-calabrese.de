@@ -141,12 +141,13 @@ export function ContactForm() {
             className={cn(feldBasis, "border-ink-100/15 appearance-none")}
           >
             <option value="">Bitte auswählen</option>
-            <option>Stadt- oder Dorffest</option>
+            <option>Stadt- oder Gemeindefest</option>
+            <option>Bürgerempfang oder Jubiläum</option>
+            <option>Großveranstaltung / Open Air</option>
+            <option>Vereinsfest</option>
             <option>Firmenevent</option>
-            <option>Vereinsfeier oder Jubiläum</option>
-            <option>Open Air / Konzert</option>
-            <option>Privatfeier / Hochzeit</option>
-            <option>Gastro-Kooperation</option>
+            <option>Nur Technik (Bühne, Licht, Ton)</option>
+            <option>Gastronomie oder Standmanagement</option>
             <option>Etwas anderes</option>
           </select>
         </div>

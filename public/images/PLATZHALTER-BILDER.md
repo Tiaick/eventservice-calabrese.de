@@ -14,12 +14,16 @@ Layout in der richtigen Bildsprache zu zeigen.
 | `platzhalter-hero-buehne-open-air.jpg` | Hero Startseite | 2400 × 1350 (16:9) | Open-Air-Bühne bei Nacht, warmes Gegenlicht |
 | `platzhalter-cta-mainstage-nacht.jpg` | CTA-Block Startseite | 2000 × 1125 (16:9) | Mainstage total, viel dunkle Fläche für Text |
 | `platzhalter-preise-mainstage.jpg` | Kopfbereich /preise | 2000 × 1125 (16:9) | Große Bühne mit Traversen |
+| `platzhalter-konzeption.jpg` | Sektion Konzeption | 1600 × 1067 (3:2) | Planungsgespräch, Ortstermin, Flächenplan |
+| `platzhalter-organisation.jpg` | Sektion Veranstaltungsorganisation | 1600 × 1067 (3:2) | Aufbautag, Crew, Ablaufbesprechung |
 | `platzhalter-buehnen.jpg` | Sektion Bühnen | 1600 × 1067 (3:2) | Pultus 48 im Aufbau oder bespielt |
 | `platzhalter-tontechnik.jpg` | Sektion Tontechnik | 1600 × 1067 (3:2) | Line-Array im Flug, FOH-Platz |
 | `platzhalter-lichttechnik.jpg` | Sektion Lichttechnik | 1600 × 1067 (3:2) | Movingheads/Beams im Haze |
 | `platzhalter-special-effects.jpg` | Sektion Special Effects | 1600 × 1067 (3:2) | Flammeneffekte, CO2, Konfetti |
-| `platzhalter-lasershow.jpg` | Sektion Lasershow | 1600 × 1067 (3:2) | Laserfächer über Publikum |
-| `platzhalter-gastro-kooperation.jpg` | Sektion Gastro | 1600 × 1067 (3:2) | Schankwagen, Gäste, Ausschank |
+| `platzhalter-lasershow.jpg` | derzeit ungenutzt (Reserve) | 1600 × 1067 (3:2) | Laserfächer über Publikum |
+| `platzhalter-gastronomie.jpg` | Sektion Gastronomie | 1600 × 1067 (3:2) | Eigene Schankwagen im Betrieb, Ausschank |
+| `platzhalter-standmanagement.jpg` | Sektion Standmanagement | 1600 × 1067 (3:2) | Standreihe auf einem eigenen Stadtfest |
+| `platzhalter-sponsoring.jpg` | Sektion Sponsoring | 1600 × 1067 (3:2) | Sponsorenbanner an Bühne oder Fläche |
 | `platzhalter-ueber-uns-werkstatt.jpg` | Über uns | 1600 × 1067 (3:2) | Werkstatt, Lager, Fuhrpark, Team |
 | `referenz-*.jpg` | Galerie /referenzen | 1200 × 800 quer, 900 × 1200 hoch | echte Eventfotos je Kategorie |
 
@@ -34,3 +38,6 @@ Kategorie.
 - Nachtaufnahmen und Gegenlicht wirken im dunklen Layout am stärksten.
 - Motive mit ruhiger, dunkler Fläche eignen sich für Bilder mit Textauflage.
 - Vor der Veröffentlichung: Einwilligung abgebildeter Personen einholen (DSGVO / KUG).
+- Für die Kommunen-Positionierung sind eigene Aufnahmen von **echten Stadt- und
+  Gemeindefesten** am wertvollsten – Standreihen, Schankwagen im Betrieb, Bühne im
+  Ortskern. Sie belegen die Positionierung besser als jedes Konzertfoto.

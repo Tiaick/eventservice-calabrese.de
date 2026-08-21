@@ -89,7 +89,53 @@ export function IconLaser(props: IconProps) {
   );
 }
 
-/** Gastro-Kooperation: Bierkrug */
+/** Konzeption: Planblatt mit Bühnengrundriss und Maßlinie */
+export function IconKonzeption(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 3h16v18H4z" />
+      <path d="M7.5 8h9v5h-9z" />
+      <path d="M7.5 17h9" />
+      <path d="M7.5 16v2M16.5 16v2" />
+    </Icon>
+  );
+}
+
+/** Veranstaltungsorganisation: Ablaufplan mit Haken */
+export function IconOrganisation(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4.5 3.5h15v17h-15z" />
+      <path d="M8 8.5h8M8 13h8M8 17h4.5" />
+      <path d="M4.5 8.5h.01M4.5 13h.01M4.5 17h.01" />
+    </Icon>
+  );
+}
+
+/** Standmanagement: Marktstand mit Markise */
+export function IconStand(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 8.5 5 4h14l2 4.5z" />
+      <path d="M3 8.5h18" />
+      <path d="M5 8.5V20h14V8.5" />
+      <path d="M9 20v-6h6v6" />
+    </Icon>
+  );
+}
+
+/** Sponsoring: Werbebanner am Mast */
+export function IconSponsoring(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 3v18" />
+      <path d="M5 4.5h14l-3 3.5 3 3.5H5z" />
+      <path d="M9 21h8" />
+    </Icon>
+  );
+}
+
+/** Gastronomie: Bierkrug */
 export function IconGastro(props: IconProps) {
   return (
     <Icon {...props}>

@@ -31,6 +31,24 @@ Texte und Preise werden in `lib/content.ts` gepflegt, Kontaktdaten zentral in
 `lib/site.ts`. Beides ist bewusst von den Komponenten getrennt, damit Inhalte ohne
 Layoutänderungen aktualisiert werden können.
 
+## Positionierung
+
+Die Website tritt als **Gesamtdienstleister für Städte und Gemeinden** auf, nicht als
+Technikverleih. Der Leistungskatalog in `lib/content.ts` umfasst acht Bereiche in fester
+Reihenfolge: Konzeption, Veranstaltungsorganisation, Bühne, Licht, Ton, Gastronomie,
+Standmanagement, Sponsoring.
+
+- **Konzeption und Organisation stehen bewusst vorn** – sie tragen die Aussage
+  „ein Ansprechpartner für die ganze Veranstaltung".
+- **Bühnenbau bleibt der Kern**: Auf der Startseite hat er einen eigenen Abschnitt mit
+  Größen, Maßen und Ab-Preisen, unabhängig vom Leistungsraster.
+- **Special Effects und Lasershow** sind keine eigenen Bereiche mehr, sondern stehen als
+  Leistungen innerhalb von *Licht* (`lib/content.ts`, Eintrag `lichttechnik`). Die
+  Preisposition „Special Effects" bleibt bestehen.
+- **Gastronomie und Sponsoring** sind auf der Startseite zusätzlich als Abschnitt
+  *Refinanzierung* zusammengefasst – das ist das Argument für knappe Haushalte.
+- Der Ablauf einer Zusammenarbeit mit Verwaltungen liegt in `kommunenAblauf`.
+
 ## Design-System
 
 Gestalterische Leitidee ist der **technische Rider**: Die Seite borgt sich die
@@ -82,14 +100,18 @@ dem Livegang gesetzt sein.**
 
 ## Offene Punkte vor dem Livegang
 
-1. **Telefon- und WhatsApp-Nummer** in `lib/site.ts` sind Platzhalter
-2. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
+1. **Die Texte der vier neuen Bereiche** (Konzeption, Veranstaltungsorganisation,
+   Standmanagement, Sponsoring) sind fachlich plausibel formuliert, aber nicht mit dem
+   Betrieb abgestimmt. Vor dem Livegang inhaltlich prüfen – besonders, welche Leistungen
+   tatsächlich selbst erbracht und welche zugekauft werden.
+2. **Telefon- und WhatsApp-Nummer** in `lib/site.ts` sind Platzhalter
+3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
-3. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
+4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
    müssen rechtlich geprüft werden
-4. **Logo**: `components/logo.tsx` ist eine typografische Wortmarke als Platzhalter
-5. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
-6. **SMTP-Zugang** im Deployment hinterlegen
+5. **Logo**: `components/logo.tsx` ist eine typografische Wortmarke als Platzhalter
+6. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
+7. **SMTP-Zugang** im Deployment hinterlegen
 
 ## Deployment
 

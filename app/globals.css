@@ -48,7 +48,7 @@
   --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
 
   /* Fluide Skala – Condensed verträgt größere Grade als eine normale Grotesk */
-  --text-hero: clamp(3rem, 1.2rem + 8vw, 7.5rem);
+  --text-hero: clamp(2.75rem, 1.3rem + 6.6vw, 6.25rem);
   /* Zeilenhöhen sind bewusst nicht enger gesetzt: In Versalien brauchen die
      Umlaute Ä, Ö und Ü Platz über der Versalhöhe, sonst kappt die Zeile
      darüber die Punkte. */

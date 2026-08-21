@@ -3,7 +3,7 @@ import Image from "next/image";
 import { IconWhatsapp } from "@/components/icons";
 import { Masslinie } from "@/components/plan";
 import { ButtonLink } from "@/components/ui/button";
-import { marken } from "@/lib/content";
+import { leistungen } from "@/lib/content";
 import { kontaktLinks, site } from "@/lib/site";
 
 /**
@@ -11,8 +11,8 @@ import { kontaktLinks, site } from "@/lib/site";
  *
  * Der Satzspiegel ist bewusst unsymmetrisch: Die Schlagzeile beginnt links am
  * Raster, die Randspalte rechts trägt technische Eckdaten wie die Kopfzeile
- * eines Bühnenplans. Über das Foto läuft eine Maßangabe – dieselbe Notation,
- * die auch auf den Aufbauplänen steht.
+ * eines Bühnenplans. Unter beidem läuft die Leistungskette als Band – sie ist
+ * das Versprechen, um das es geht: alle Gewerke aus einer Hand.
  */
 export function Hero() {
   return (
@@ -31,7 +31,7 @@ export function Hero() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--color-ink-950)_2%,color-mix(in_oklab,var(--color-ink-950)_86%,transparent)_30%,color-mix(in_oklab,var(--color-ink-950)_32%,transparent)_66%,color-mix(in_oklab,var(--color-ink-950)_66%,transparent)_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--color-ink-950)_2%,color-mix(in_oklab,var(--color-ink-950)_87%,transparent)_32%,color-mix(in_oklab,var(--color-ink-950)_34%,transparent)_68%,color-mix(in_oklab,var(--color-ink-950)_66%,transparent)_100%)]"
       />
       <div aria-hidden="true" className="grain pointer-events-none absolute inset-0 -z-10" />
 
@@ -42,39 +42,38 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-page relative pt-32 pb-12 lg:pb-16">
+      <div className="container-page relative pt-32 pb-12 lg:pb-14">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
           {/* Schlagzeile */}
           <div className="lg:col-span-8">
             <p className="font-mono text-label text-flare-400 uppercase">
-              Veranstaltungstechnik · Norddeutschland
+              Veranstaltungspartner für Städte &amp; Gemeinden
             </p>
 
             {/* Der Zeilenumbruch trägt die Aussage und bleibt deshalb manuell. */}
             <h1 className="mt-6 text-hero uppercase text-white">
-              Wir bauen
+              Ein Partner
               <br />
-              die Bühne.
+              für die ganze
               <br />
-              <span className="text-flare-500">Sie liefern</span>
-              <br />
-              <span className="text-flare-500">den Moment.</span>
+              <span className="text-flare-500">Veranstaltung.</span>
             </h1>
           </div>
 
           {/* Randspalte mit Eckdaten */}
           <div className="lg:col-span-4 lg:pb-3">
             <p className="max-w-md text-lead text-ink-200">
-              Bühnen, Ton, Licht und Effekte aus einer Hand – seit über 15 Jahren.
-              Von {site.adresse.ort} aus in ganz Norddeutschland unterwegs.
+              Konzeption, Organisation und alle Gewerke aus einer Hand – von der
+              ersten Planung bis zur Abrechnung. Von {site.adresse.ort} aus in ganz
+              Norddeutschland.
             </p>
 
             <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-ink-100/15 pt-6">
               {[
-                { k: "Sitz", v: site.adresse.ort },
+                { k: "Für", v: "Städte & Gemeinden" },
+                { k: "Gewerke", v: "8 aus einer Hand" },
                 { k: "Seit", v: "über 15 Jahren" },
                 { k: "Events", v: "300+" },
-                { k: "Bis", v: "5.000 Gäste" },
               ].map((d) => (
                 <div key={d.k}>
                   <dt className="font-mono text-[0.6rem] tracking-[0.16em] text-ink-500 uppercase">
@@ -86,7 +85,11 @@ export function Hero() {
             </dl>
 
             <div className="mt-8 flex flex-col gap-2.5 sm:flex-row lg:flex-col xl:flex-row">
-              <ButtonLink href="/kontakt" groesse="lg" className="w-full sm:w-auto lg:w-full xl:w-auto">
+              <ButtonLink
+                href="/kontakt"
+                groesse="lg"
+                className="w-full sm:w-auto lg:w-full xl:w-auto"
+              >
                 Angebot anfragen
               </ButtonLink>
 
@@ -103,22 +106,22 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Equipment-Marken als Materialzeile */}
-        <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-ink-100/15 pt-5">
-          <p className="font-mono text-[0.6rem] tracking-[0.18em] text-ink-500 uppercase">
-            Material
-          </p>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-2">
-            {marken.map((marke) => (
-              <li
-                key={marke.name}
-                className="font-mono text-[0.75rem] tracking-[0.1em] text-ink-300 uppercase"
-              >
-                {marke.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Leistungskette – das Versprechen in einer Zeile */}
+        <ul className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink-100/15 pt-5">
+          {leistungen.map((leistung, i) => (
+            <li
+              key={leistung.id}
+              className="flex items-center gap-5 font-mono text-[0.72rem] tracking-[0.08em] text-ink-300 uppercase"
+            >
+              {i > 0 ? (
+                <span aria-hidden="true" className="text-ink-500">
+                  ·
+                </span>
+              ) : null}
+              {leistung.label}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

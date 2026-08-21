@@ -14,8 +14,9 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Eventservice Calabrese aus Bad Bramstedt: Familienbetrieb mit über 15 Jahren Erfahrung " +
-    "in Veranstaltungstechnik, eigenem Equipment, Werkstatt und Fuhrpark.",
+    "Eventservice Calabrese aus Bad Bramstedt: Familienbetrieb mit über 15 Jahren Erfahrung, " +
+    "Gesamtdienstleister für Städte, Gemeinden und Großveranstaltungen – mit eigenem Equipment, " +
+    "Werkstatt und Fuhrpark.",
   alternates: { canonical: "/ueber-uns" },
 };
 
@@ -41,14 +42,14 @@ export default function UeberUnsSeite() {
         blatt="Blatt 04"
         marke="Über uns"
         titel="Der Betrieb hinter der Bühne"
-        lead="Eventservice Calabrese ist ein Familienbetrieb aus Bad Bramstedt. Seit über 15 Jahren bauen wir Bühnen auf, hängen Line Arrays und fahren Lichtshows – in Schleswig-Holstein, Hamburg und dem norddeutschen Umland."
+        lead="Eventservice Calabrese ist ein Familienbetrieb aus Bad Bramstedt. Angefangen mit Bühne, Licht und Ton, sind wir heute Ansprechpartner für die ganze Veranstaltung – für Städte, Gemeinden und Veranstalter in Schleswig-Holstein, Hamburg und dem norddeutschen Umland."
         beiwerk={
           <dl className="border-t border-ink-100/15">
             {[
               { label: "Standort", wert: `${site.adresse.ort}, ${site.adresse.region}` },
               { label: "Einzugsgebiet", wert: "Schleswig-Holstein, Hamburg, Umland" },
               { label: "Im Geschäft seit", wert: "über 15 Jahren" },
-              { label: "Eigenes Material", wert: "Bühnen, PA, Licht, Effekte" },
+              { label: "Leistungsbereiche", wert: "8, von Konzeption bis Sponsoring" },
             ].map((fakt) => (
               <div
                 key={fakt.label}
@@ -112,9 +113,17 @@ export default function UeberUnsSeite() {
                 </p>
                 <p>
                   Über 300 Veranstaltungen sind seitdem zusammengekommen – vom
-                  Feuerwehrfest mit 200 Gästen bis zum Open Air mit mehreren tausend
-                  Besuchern. Was sich dabei bewährt hat: gutes Material, ein
-                  eingespieltes Team und Absprachen, auf die man sich verlassen kann.
+                  Feuerwehrfest mit 200 Gästen bis zum Stadtfest mit mehreren tausend
+                  Besuchern. Mit den Aufträgen ist auch der Umfang gewachsen: Wo wir
+                  früher Technik geliefert haben, übernehmen wir heute auf Wunsch die
+                  ganze Veranstaltung – Konzeption, Organisation, Gastronomie,
+                  Standflächen und Sponsoring inbegriffen.
+                </p>
+                <p>
+                  Der Grund ist einfach: Kommunen und Veranstalter wollten immer
+                  häufiger einen Ansprechpartner statt sechs. Was sich dabei bewährt
+                  hat, ist unverändert – gutes Material, ein eingespieltes Team und
+                  Absprachen, auf die man sich verlassen kann.
                 </p>
               </div>
 
