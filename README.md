@@ -117,17 +117,13 @@ dem Livegang gesetzt sein.**
    Standmanagement, Sponsoring) sind fachlich plausibel formuliert, aber nicht mit dem
    Betrieb abgestimmt. Vor dem Livegang inhaltlich prüfen – besonders, welche Leistungen
    tatsächlich selbst erbracht und welche zugekauft werden.
-2. **Telefon- und WhatsApp-Nummer** in `lib/site.ts` sind noch Platzhalter
-   (`04192 000000`). Vorgesehen ist die Mobilnummer des Inhabers – sobald sie vorliegt,
-   in `site.telefon` und `site.whatsapp` eintragen. Die E-Mail-Adresse ist bereits die
-   echte (`kontakt@eventservice-calabrese.de`)
-3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
+2. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
-4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
+3. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
    müssen rechtlich geprüft werden
-5. **Logo**: `components/logo.tsx` ist eine typografische Wortmarke als Platzhalter
-6. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
-7. **SMTP-Zugang** im Deployment hinterlegen
+4. **Logo**: `components/logo.tsx` ist eine typografische Wortmarke als Platzhalter
+5. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
+6. **SMTP-Zugang** im Deployment hinterlegen
 
 ## Deployment
 

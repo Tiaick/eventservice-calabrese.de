@@ -13,7 +13,7 @@ export function LocalBusinessSchema() {
     name: site.name,
     description: site.description,
     url: site.url,
-    telephone: `+${site.whatsapp.nummer}`,
+    telephone: site.telefon.link,
     email: site.email,
     image: `${site.url}/images/platzhalter-hero-buehne-open-air.jpg`,
     priceRange: "€€",

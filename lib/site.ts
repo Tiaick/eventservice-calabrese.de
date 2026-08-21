@@ -2,11 +2,10 @@
  * Stammdaten des Betriebs – eine Quelle für Header, Footer, Kontaktseite,
  * strukturierte Daten und Metadaten.
  *
- * Die E-Mail-Adresse ist die echte Adresse des Betriebs.
- *
- * PLATZHALTER: Telefon- und WhatsApp-Nummer sind noch nicht die echten
- * Anschlussnummern – vorgesehen ist die Mobilnummer des Inhabers. Hier zentral
- * ersetzen, dann ziehen alle tel:- und wa.me-Links automatisch nach.
+ * E-Mail-Adresse und Rufnummer sind die echten Kontaktdaten des Betriebs.
+ * Die Rufnummer ist die Mobilnummer des Inhabers und wird für Telefon und
+ * WhatsApp gleichermaßen verwendet. Wird sie hier geändert, ziehen alle
+ * tel:- und wa.me-Links sowie die strukturierten Daten automatisch nach.
  */
 
 export const site = {
@@ -32,15 +31,15 @@ export const site = {
     lng: 9.8877,
   },
 
-  /* PLATZHALTER – echte Rufnummer eintragen */
   telefon: {
-    anzeige: "04192 000000",
-    link: "+494192000000",
+    anzeige: "0176 22640180",
+    /* tel: erwartet die Nummer international und ohne Trennzeichen */
+    link: "+4917622640180",
   },
   whatsapp: {
     anzeige: "WhatsApp",
     /* wa.me erwartet die Nummer international, ohne + und ohne Leerzeichen */
-    nummer: "494192000000",
+    nummer: "4917622640180",
   },
   email: "kontakt@eventservice-calabrese.de",
 
