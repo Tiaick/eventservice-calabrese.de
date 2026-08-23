@@ -1,11 +1,12 @@
 # Platzhalter-Bilder
 
-**Alle Dateien in diesem Ordner sind Platzhalter und müssen vor dem Livegang durch
-echte Eventfotos von Eventservice Calabrese ersetzt werden.**
+**Die meisten Dateien in diesem Ordner sind Platzhalter und müssen vor dem Livegang
+durch echte Eventfotos von Eventservice Calabrese ersetzt werden.** Ausgenommen sind
+die Dateien, die unten ausdrücklich als echtes Kundenfoto markiert sind.
 
 Quelle der Platzhalter: [Unsplash](https://unsplash.com) (Unsplash-Lizenz, kostenlose
-kommerzielle Nutzung ohne Bildnachweis-Pflicht). Sie dienen ausschließlich dazu, das
-Layout in der richtigen Bildsprache zu zeigen.
+kommerzielle Nutzung ohne Bildnachweis-Pflicht). Sie dienen dazu, das Layout in der
+richtigen Bildsprache zu zeigen, bis weitere echte Fotos vorliegen.
 
 ## Austausch – worauf achten
 
@@ -16,12 +17,12 @@ Layout in der richtigen Bildsprache zu zeigen.
 | `platzhalter-preise-mainstage.jpg` | Kopfbereich /preise | 2000 × 1125 (16:9) | Große Bühne mit Traversen |
 | `platzhalter-konzeption.jpg` | Sektion Konzeption | 1600 × 1067 (3:2) | Planungsgespräch, Ortstermin, Flächenplan |
 | `platzhalter-organisation.jpg` | Sektion Veranstaltungsorganisation | 1600 × 1067 (3:2) | Aufbautag, Crew, Ablaufbesprechung |
-| `platzhalter-buehnen.jpg` | Sektion Bühnen | 1600 × 1067 (3:2) | Pultus 48 im Aufbau oder bespielt |
-| `platzhalter-tontechnik.jpg` | Sektion Tontechnik | 1600 × 1067 (3:2) | Line-Array im Flug, FOH-Platz |
-| `platzhalter-lichttechnik.jpg` | Sektion Lichttechnik | 1600 × 1067 (3:2) | Movingheads/Beams im Haze |
+| `buehne-volksparkstadion.jpg` | Sektion Bühnen (Start & /leistungen) | 1448 × 1086 (4:3) | **Echtes Kundenfoto** – eigener Bühnenaufbau im Volksparkstadion Hamburg |
+| `platzhalter-tontechnik.jpg` | Sektion Tontechnik | 1600 × 1067 (3:2) | Line-Array-Box im Vordergrund, Sänger im Hintergrund |
+| `platzhalter-lichttechnik.jpg` | Sektion Lichttechnik | 1600 × 1067 (3:2) | Movingheads mit farbigen Lichtstrahlen im Kreuz |
 | `platzhalter-special-effects.jpg` | Sektion Special Effects | 1600 × 1067 (3:2) | Flammeneffekte, CO2, Konfetti |
 | `platzhalter-lasershow.jpg` | derzeit ungenutzt (Reserve) | 1600 × 1067 (3:2) | Laserfächer über Publikum |
-| `platzhalter-gastronomie.jpg` | Sektion Gastronomie | 1600 × 1067 (3:2) | Eigene Schankwagen im Betrieb, Ausschank |
+| `platzhalter-gastronomie.jpg` | Sektion Gastronomie | 2560 × 1709 (3:2) | Vom bisherigen Kundenauftritt übernommen (Fässer/Zapfanlage) – auf Wunsch des Kunden |
 | `platzhalter-standmanagement.jpg` | Sektion Standmanagement | 1600 × 1067 (3:2) | Standreihe auf einem eigenen Stadtfest |
 | `platzhalter-sponsoring.jpg` | Sektion Sponsoring | 1600 × 1067 (3:2) | Sponsorenbanner an Bühne oder Fläche |
 | `platzhalter-ueber-uns-werkstatt.jpg` | Über uns | 1600 × 1067 (3:2) | Werkstatt, Lager, Fuhrpark, Team |

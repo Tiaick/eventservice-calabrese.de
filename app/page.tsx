@@ -134,10 +134,10 @@ export default function Startseite() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
             <Reveal className="lg:col-span-5">
               <div className="relative aspect-4/3 overflow-hidden border border-ink-100/12">
-                {/* PLATZHALTER-Bild */}
+                {/* Echtes Kundenfoto, kein Stockbild */}
                 <Image
-                  src="/images/platzhalter-buehnen.jpg"
-                  alt="Bühne bei Nacht, von warmem Gegenlicht ausgeleuchtet, davor Publikum in Silhouette"
+                  src="/images/buehne-volksparkstadion.jpg"
+                  alt="Bühnenaufbau mit Traversendach im Volksparkstadion Hamburg, Zuschauerränge im Hintergrund"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
@@ -290,7 +290,7 @@ export default function Startseite() {
                 nummer: "A",
                 titel: "Gastronomie",
                 bild: "/images/platzhalter-gastronomie.jpg",
-                alt: "Warm beleuchtete Ausschanktheke mit Gläsern und Hängeleuchten am Abend",
+                alt: "Person in schwarzer Schürze trägt zwei Bierfässer, im Hintergrund Zapfanlage",
                 text: "Wir übernehmen den Getränkeausschank mit bis zu 15 Schankwagen, Personal und Abrechnung. Auf Wunsch als Kooperation: Bühne und Technik ohne Mietkosten, dafür der Ausschank über uns.",
                 href: "/leistungen#gastronomie" as const,
               },

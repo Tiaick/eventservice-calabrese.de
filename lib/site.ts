@@ -32,7 +32,7 @@ export const site = {
   },
 
   telefon: {
-    anzeige: "0176 22640180",
+    anzeige: "017622640180",
     /* tel: erwartet die Nummer international und ohne Trennzeichen */
     link: "+4917622640180",
   },

@@ -89,9 +89,9 @@ export const leistungen: Leistung[] = [
     ],
     kenngroesse: "6,00 × 8,00 m · 48 m²",
     abPreis: "ab 400 €",
-    bild: "/images/platzhalter-buehnen.jpg",
+    bild: "/images/buehne-volksparkstadion.jpg",
     bildAlt:
-      "Bühne bei Nacht, von warmem Gegenlicht ausgeleuchtet, davor Publikum in Silhouette",
+      "Bühnenaufbau mit Traversendach im Volksparkstadion Hamburg, Zuschauerränge im Hintergrund",
   },
   {
     id: "lichttechnik",
@@ -112,7 +112,7 @@ export const leistungen: Leistung[] = [
     kenngroesse: "Licht · Effekte · Lasershow",
     bild: "/images/platzhalter-lichttechnik.jpg",
     bildAlt:
-      "Traversenkonstruktion mit goldgelben Scheinwerfern über einer Konzertbühne",
+      "Mehrere Movingheads auf einer dunklen Bühne, farbige Lichtstrahlen kreuzen sich über der Fläche",
   },
   {
     id: "tontechnik",
@@ -133,7 +133,7 @@ export const leistungen: Leistung[] = [
     kenngroesse: "bis 5.000 Personen Open Air",
     bild: "/images/platzhalter-tontechnik.jpg",
     bildAlt:
-      "Konzertbühne in blau-violettem Licht, Musiker am Pult, Publikum mit erhobenen Händen",
+      "Line-Array-Lautsprecher im Vordergrund, dahinter ein Sänger mit Mikrofon auf der Bühne",
   },
   {
     id: "gastronomie",
@@ -154,7 +154,7 @@ export const leistungen: Leistung[] = [
     kenngroesse: "bis 15 Schankwagen",
     bild: "/images/platzhalter-gastronomie.jpg",
     bildAlt:
-      "Warm beleuchtete Ausschanktheke mit Gläsern und Hängeleuchten am Abend",
+      "Person in schwarzer Schürze trägt zwei Bierfässer, Unterarme tätowiert, im Hintergrund Zapfanlage",
   },
   {
     id: "standmanagement",
@@ -512,4 +512,60 @@ export const marken = [
   { name: "L-Acoustics", beschreibung: "Line Arrays für große Flächen" },
   { name: "Pultus", beschreibung: "Bühnensysteme" },
   { name: "Explo", beschreibung: "Flammeneffekte" },
+];
+
+/**
+ * Referenzkunden – die "Logo-Wand" auf /referenzen.
+ *
+ * Alle zehn genannten Auftraggeber sind enthalten. Für vier Namen war die
+ * Identität aus öffentlich zugänglichen Quellen nicht zweifelsfrei zu klären
+ * (mehrere gleichnamige Firmen, unklare Abkürzung oder ein Treffer, der nicht
+ * zur übrigen Kundenliste passte) – ein falsches Logo als "Kunde" zu zeigen
+ * wäre für die betroffene Firma und für Eventservice Calabrese ein größeres
+ * Problem als ein Textfeld ohne Logo. Diese vier tragen deshalb vorerst einen
+ * reinen Schriftzug (`logo: undefined`) statt eines geratenen Bildes.
+ *
+ * Zum Nachtragen: Datei nach public/images/kunden/ legen, hier `logo` und
+ * `logoAlt` ergänzen. Empfohlenes Format: freigestellt oder auf hellem
+ * Grund, möglichst breiter als hoch – die Kachel ist bewusst hell, damit
+ * unterschiedlichste Logo-Farben und -Formate nebeneinander funktionieren.
+ */
+export type Referenzkunde = {
+  name: string;
+  /** Pfad unter /public, ohne führendes "/images/kunden/" wird ergänzt */
+  logo?: string;
+  logoAlt?: string;
+  /** Kurzform für die Bildunterschrift, z. B. "Stadt" oder "Festival" */
+  kategorie?: string;
+};
+
+export const referenzkunden: Referenzkunde[] = [
+  { name: "Hagebau", logo: "hagebau.svg", logoAlt: "Logo von Hagebau", kategorie: "Handel" },
+  {
+    name: "Stadt Bad Bramstedt",
+    logo: "stadt-bad-bramstedt.jpg",
+    logoAlt: "Wortmarke der Stadt Bad Bramstedt",
+    kategorie: "Kommune",
+  },
+  {
+    name: "Amt Bad Bramstedt-Land",
+    logo: "amt-bad-bramstedt-land.png",
+    logoAlt: "Wappen des Amts Bad Bramstedt-Land",
+    kategorie: "Kommune",
+  },
+  { name: "Bandel Autotechnik", kategorie: "Gewerbe" },
+  { name: "Oktoberfest Kaki", kategorie: "Veranstaltung" },
+  {
+    name: "Match Börner Open Air",
+    kategorie: "Festival",
+  },
+  { name: "Weihnachtsmarkt Bad Bramstedt", kategorie: "Veranstaltung" },
+  { name: "Ham Can Hamburg", kategorie: "Veranstaltung" },
+  {
+    name: "Auenlandklinik",
+    logo: "auenlandklinik.png",
+    logoAlt: "Logo der Auenlandklinik Bad Bramstedt",
+    kategorie: "Klinik",
+  },
+  { name: "Volker Mohr GmbH", kategorie: "Gewerbe" },
 ];

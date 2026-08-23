@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 
 import { CTASection } from "@/components/cta-section";
 import { GalleryGrid } from "@/components/gallery-grid";
+import { KundenReferenzen } from "@/components/kunden-referenzen";
 import { PageHeader } from "@/components/page-header";
+import { Sektionsmarke } from "@/components/plan";
+import { Reveal } from "@/components/reveal";
 import { kennzahlen } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Referenzen",
   description:
-    "Eindrücke aus über 300 Veranstaltungen: Bühnenaufbauten, Lichtdesign, Beschallung, " +
-    "Special Effects und Lasershows von Eventservice Calabrese.",
+    "Über 300 Veranstaltungen für Städte, Gemeinden, Unternehmen und Vereine in " +
+    "Norddeutschland – darunter Hagebau, die Stadt Bad Bramstedt, das Amt Bad Bramstedt-Land " +
+    "und die Auenlandklinik.",
   alternates: { canonical: "/referenzen" },
 };
 
@@ -41,9 +45,33 @@ export default function ReferenzenSeite() {
         }
       />
 
+      {/* --- Auftraggeber ---------------------------------------------------- */}
+      <section className="section-y-sm border-b border-ink-100/12">
+        <div className="container-page">
+          <Reveal>
+            <Sektionsmarke nummer="01">Auftraggeber</Sektionsmarke>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-400">
+              Eine Auswahl der Städte, Gemeinden, Unternehmen und Veranstaltungen, für die
+              wir gearbeitet haben.
+            </p>
+          </Reveal>
+
+          <Reveal verzoegerung={80} className="mt-8">
+            <KundenReferenzen />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* --- Galerie ---------------------------------------------------------- */}
       <section className="section-y">
         <div className="container-page">
-          <GalleryGrid />
+          <Reveal>
+            <Sektionsmarke nummer="02">Galerie</Sektionsmarke>
+          </Reveal>
+
+          <div className="mt-8">
+            <GalleryGrid />
+          </div>
 
           {/* Klarer Hinweis, solange noch Platzhalter zu sehen sind */}
           <p className="mt-12 border-l-2 border-ink-600 py-2 pl-5 text-sm leading-relaxed text-ink-400">
