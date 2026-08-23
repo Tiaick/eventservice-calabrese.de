@@ -517,13 +517,16 @@ export const marken = [
 /**
  * Referenzkunden – die "Logo-Wand" auf /referenzen.
  *
- * Alle zehn genannten Auftraggeber sind enthalten. Für vier Namen war die
- * Identität aus öffentlich zugänglichen Quellen nicht zweifelsfrei zu klären
- * (mehrere gleichnamige Firmen, unklare Abkürzung oder ein Treffer, der nicht
- * zur übrigen Kundenliste passte) – ein falsches Logo als "Kunde" zu zeigen
- * wäre für die betroffene Firma und für Eventservice Calabrese ein größeres
- * Problem als ein Textfeld ohne Logo. Diese vier tragen deshalb vorerst einen
- * reinen Schriftzug (`logo: undefined`) statt eines geratenen Bildes.
+ * Alle zehn genannten Auftraggeber sind enthalten. Für neun Namen ist die
+ * Identität geklärt, sechs davon mit echtem, geprüftem Logo. Bei
+ * "Kaltenkirchener Wiesn" und "Match Börner Open Air" steht die Identität
+ * fest, aber es ließ sich (noch) kein sauberes Logo-Bild beschaffen. Nur
+ * "Volker Mohr GmbH" bleibt komplett offen: Zwei gleichnamige Firmen wurden
+ * gefunden, keine davon war die richtige – ein falsches Logo als "Kunde" zu
+ * zeigen wäre für die betroffene Firma und für Eventservice Calabrese ein
+ * größeres Problem als ein Textfeld ohne Logo. Diese Einträge tragen
+ * deshalb vorerst nur einen Schriftzug (`logo: undefined`) statt eines
+ * geratenen Bildes.
  *
  * Zum Nachtragen: Datei nach public/images/kunden/ legen, hier `logo` und
  * `logoAlt` ergänzen. Empfohlenes Format: freigestellt oder auf hellem
@@ -553,14 +556,29 @@ export const referenzkunden: Referenzkunde[] = [
     logoAlt: "Wappen des Amts Bad Bramstedt-Land",
     kategorie: "Kommune",
   },
-  { name: "Bandel Autotechnik", kategorie: "Gewerbe" },
-  { name: "Oktoberfest Kaki", kategorie: "Veranstaltung" },
+  {
+    name: "Bandel Automobiltechnik",
+    logo: "bandel-automobiltechnik.svg",
+    logoAlt: "Logo von Bandel Automobiltechnik GmbH",
+    kategorie: "Gewerbe",
+  },
+  {
+    name: "Kaltenkirchener Wiesn",
+    /* Bestätigte Identität ("Kaki" = Kaltenkirchen), aber kaki-wiesn.de war
+       beim Abruf nicht erreichbar (503/TLS-Fehler) – kein Logo gesichert. */
+    kategorie: "Veranstaltung",
+  },
   {
     name: "Match Börner Open Air",
     kategorie: "Festival",
   },
   { name: "Weihnachtsmarkt Bad Bramstedt", kategorie: "Veranstaltung" },
-  { name: "Ham Can Hamburg", kategorie: "Veranstaltung" },
+  {
+    name: "HamCan Hamburg",
+    logo: "hamcan.png",
+    logoAlt: "Logo von HamCan – Expo and Festival",
+    kategorie: "Veranstaltung",
+  },
   {
     name: "Auenlandklinik",
     logo: "auenlandklinik.png",

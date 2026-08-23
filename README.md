@@ -114,25 +114,24 @@ dem Livegang gesetzt sein.**
 ## Referenzkunden (/referenzen)
 
 `lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit zehn genannten
-Auftraggebern. Für sechs davon war die Identität aus öffentlich zugänglichen Quellen klar
-genug, um ein echtes, richtig zugeordnetes Logo einzusetzen: Hagebau, Stadt Bad Bramstedt,
-Amt Bad Bramstedt-Land, Auenlandklinik. Für vier Namen blieb die Identität unklar –
-**diese zeigen bewusst nur einen Schriftzug statt eines geratenen Logos**, weil ein falsch
-zugeordnetes Firmenlogo größeren Schaden anrichten kann als eine schlichte Textkachel:
+Auftraggebern. Sechs davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
+Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg und Auenlandklinik. Drei
+Namen wurden vom Kunden nachträglich bestätigt, siehe Rückfrage im Sitzungsverlauf.
 
-- **Bandel Autotechnik** – wahrscheinlichster Treffer ist „Bandel Automobiltechnik GmbH“
-  in Henstedt-Ulzburg, aber Name und Firmierung stimmen nicht exakt überein.
-- **Volker Mohr GmbH** – zwei unterschiedliche Firmen dieses Namens gefunden (Kaltenkirchen
-  und Dollern), nicht zu unterscheiden, welche gemeint ist.
-- **Oktoberfest Kaki** – meine Vermutung: „Kaltenkirchener Wiesn“ (Kaki = Kaltenkirchen),
-  aber nicht bestätigt.
-- **Ham Can Hamburg** – einziger Treffer ist „HamCan“, eine Cannabis-Messe in Hamburg; das
-  wirkt wie ein Missverständnis und sollte vor Veröffentlichung geklärt werden.
+Vier Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
 
-Zusätzlich: Für „Match Börner Open Air“ ist die Identität sicher (bekanntes Punk-Festival
-in Norderstedt), aber es ließ sich kein sauberes Logo-Bild sichern – auch das steht als
-Schriftzug. „Weihnachtsmarkt Bad Bramstedt“ hat vermutlich kein eigenes Logo und trägt
-ebenfalls nur den Namen.
+- **Kaltenkirchener Wiesn** – Identität bestätigt (Kaki = Kaltenkirchen, offizielle Domain
+  `kaki-wiesn.de`), aber die Seite war beim Abruf nicht erreichbar (503/TLS-Fehler). Logo
+  bei Gelegenheit nachtragen.
+- **Match Börner Open Air** – Identität sicher (bekanntes Festival in Norderstedt), aber
+  auf der Website ließ sich kein sauberes Logo-Bild finden, nur ein Line-up-Poster.
+
+**Weiterhin ungeklärt: Volker Mohr GmbH.** Zwei unterschiedliche Firmen dieses Namens
+gefunden (Kaltenkirchen und Dollern) – laut Rückmeldung des Kunden ist **keine von beiden**
+die richtige. Ort, Branche oder direkt das Logo nachreichen, dann wird es ergänzt.
+
+„Weihnachtsmarkt Bad Bramstedt" hat vermutlich kein eigenes Logo und trägt bewusst nur
+den Namen.
 
 **Um echte Logos nachzutragen:** Datei nach `public/images/kunden/` legen, in
 `referenzkunden` bei `logo` und `logoAlt` eintragen.
@@ -143,7 +142,9 @@ ebenfalls nur den Namen.
    Standmanagement, Sponsoring) sind fachlich plausibel formuliert, aber nicht mit dem
    Betrieb abgestimmt. Vor dem Livegang inhaltlich prüfen – besonders, welche Leistungen
    tatsächlich selbst erbracht und welche zugekauft werden.
-2. **Vier Referenzkunden ungeklärt** – siehe Abschnitt „Referenzkunden“ oben.
+2. **Volker Mohr GmbH** braucht noch die richtige Zuordnung, die Logos von
+   Kaltenkirchener Wiesn und Match Börner Open Air fehlen noch – siehe Abschnitt
+   „Referenzkunden“ oben.
 3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
 4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
