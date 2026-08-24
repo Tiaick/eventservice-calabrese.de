@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import logoMarke from "@/public/images/logo-kompakt.png";
 import { cn } from "@/lib/utils";
 
 /**
@@ -11,13 +10,16 @@ import { cn } from "@/lib/utils";
  * mehr lesbar, und dieselben Leistungen stehen im Footer bereits als Text.
  *
  * Für dunklen Grund gestaltet (weiße Schrift), passend zum ausschließlich
- * dunklen Farbschema der Seite.
+ * dunklen Farbschema der Seite. Bildpfad als String statt Modul-Import,
+ * konsistent zu jedem anderen next/image-Aufruf im Projekt.
  */
 export function Logo({ className }: { className?: string }) {
   return (
     <Image
-      src={logoMarke}
+      src="/images/logo-kompakt.png"
       alt=""
+      width={1555}
+      height={412}
       priority
       className={cn("h-9 w-auto sm:h-10", className)}
     />
