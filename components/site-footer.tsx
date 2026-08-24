@@ -31,7 +31,7 @@ export function SiteFooter() {
         <div className="grid gap-12 py-14 lg:grid-cols-12 lg:gap-8 lg:py-18">
           {/* Marke */}
           <div className="lg:col-span-4">
-            <Logo />
+            <Logo className="h-11 sm:h-12" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-400">
               Bühnen, Ton, Licht und Effekte für Veranstaltungen in ganz Norddeutschland.
               Seit über 15 Jahren – vom Vereinsfest bis zum Open Air.

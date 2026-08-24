@@ -149,9 +149,8 @@ den Namen.
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
 4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
    müssen rechtlich geprüft werden
-5. **Logo**: `components/logo.tsx` ist eine typografische Wortmarke als Platzhalter
-6. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
-7. **SMTP-Zugang** im Deployment hinterlegen
+5. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
+6. **SMTP-Zugang** im Deployment hinterlegen
 
 ## Deployment
 
