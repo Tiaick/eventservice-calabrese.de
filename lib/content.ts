@@ -48,7 +48,7 @@ export const leistungen: Leistung[] = [
     kenngroesse: "Konzept · Flächenplan · Budgetrahmen",
     bild: "/images/platzhalter-konzeption.jpg",
     bildAlt:
-      "Große Bühne mit Projektionsfläche in einer abgedunkelten Halle, davor ein volles Publikum",
+      "Vier Personen sitzen dicht an einem Tisch zusammen und sichten gemeinsam ausgedruckte Fotos und Unterlagen zur Planung",
   },
   {
     id: "veranstaltungsorganisation",
