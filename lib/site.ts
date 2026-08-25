@@ -67,6 +67,7 @@ export const navigation = [
 export const rechtlicheNavigation = [
   { label: "Impressum", href: "/impressum" },
   { label: "Datenschutz", href: "/datenschutz" },
+  { label: "AGB", href: "/agb" },
 ] as const;
 
 /** Fertige Link-Ziele für Direktkontakt – überall identisch verwendbar. */

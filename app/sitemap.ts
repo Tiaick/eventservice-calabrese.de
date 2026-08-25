@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { pfad: "/kontakt", prioritaet: 0.8, frequenz: "yearly" },
     { pfad: "/impressum", prioritaet: 0.2, frequenz: "yearly" },
     { pfad: "/datenschutz", prioritaet: 0.2, frequenz: "yearly" },
+    { pfad: "/agb", prioritaet: 0.2, frequenz: "yearly" },
   ];
 
   return seiten.map((seite) => ({
