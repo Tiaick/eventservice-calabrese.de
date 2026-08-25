@@ -22,7 +22,7 @@ richtigen Bildsprache zu zeigen, bis weitere echte Fotos vorliegen.
 | `platzhalter-lichttechnik.jpg` | Sektion Lichttechnik | 1600 × 1067 (3:2) | Movingheads mit farbigen Lichtstrahlen im Kreuz |
 | `platzhalter-special-effects.jpg` | Sektion Special Effects | 1600 × 1067 (3:2) | Flammeneffekte, CO2, Konfetti |
 | `platzhalter-lasershow.jpg` | derzeit ungenutzt (Reserve) | 1600 × 1067 (3:2) | Laserfächer über Publikum |
-| `platzhalter-gastronomie.jpg` | Sektion Gastronomie | 2560 × 1709 (3:2) | Vom bisherigen Kundenauftritt übernommen (Fässer/Zapfanlage) – auf Wunsch des Kunden |
+| `platzhalter-gastronomie.jpg` | Sektion Gastronomie | 1600 × 1067 (3:2) | Catering-Tisch mit Aufschnitt, Käse und Gebäck bei einer Veranstaltung |
 | `platzhalter-standmanagement.jpg` | Sektion Standmanagement | 1600 × 1067 (3:2) | Standreihe auf einem eigenen Stadtfest |
 | `platzhalter-sponsoring.jpg` | Sektion Sponsoring | 1600 × 1067 (3:2) | Sponsorenbanner an Bühne oder Fläche |
 | `platzhalter-ueber-uns-werkstatt.jpg` | Über uns | 1600 × 1067 (3:2) | Werkstatt, Lager, Fuhrpark, Team |

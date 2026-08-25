@@ -154,7 +154,7 @@ export const leistungen: Leistung[] = [
     kenngroesse: "bis 15 Schankwagen",
     bild: "/images/platzhalter-gastronomie.jpg",
     bildAlt:
-      "Person in schwarzer Schürze trägt zwei Bierfässer, Unterarme tätowiert, im Hintergrund Zapfanlage",
+      "Reich gedeckter Catering-Tisch mit Aufschnitt, Käse, Oliven und Baguette bei einer Veranstaltung",
   },
   {
     id: "standmanagement",

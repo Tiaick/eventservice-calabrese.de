@@ -195,6 +195,19 @@
   padding-block: clamp(3rem, 2.2rem + 3.5vw, 5.5rem);
 }
 
+/* Laufband der Referenzkunden auf der Startseite: Die Kachelreihe liegt
+   doppelt hintereinander, die Animation verschiebt genau um eine Kopie
+   (-50%) – dadurch schließt die Schleife lückenlos. */
+@keyframes laufband {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-laufband {
+  animation: laufband 42s linear infinite;
+}
+
 /* Haarlinie – ersetzt flächige Karten als Hauptmittel der Gliederung */
 @utility hairline {
   border-color: --alpha(var(--color-ink-100) / 12%);

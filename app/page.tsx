@@ -15,6 +15,7 @@ import {
   IconTon,
 } from "@/components/icons";
 import { Eckmarken, Masslinie, Sektionsmarke } from "@/components/plan";
+import { ReferenzenLaufband } from "@/components/referenzen-laufband";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
@@ -90,6 +91,19 @@ export default function Startseite() {
     <>
       <Hero />
       <StatBar />
+
+      {/* --- Auftraggeber (Laufband) ---------------------------------------- */}
+      <section className="section-y-sm border-b border-ink-100/12 bg-ink-900">
+        <div className="container-page">
+          <Reveal>
+            <Sektionsmarke>Auftraggeber</Sektionsmarke>
+          </Reveal>
+        </div>
+
+        <Reveal verzoegerung={80} className="mt-8">
+          <ReferenzenLaufband />
+        </Reveal>
+      </section>
 
       {/* --- 01 Leistungsübersicht ---------------------------------------- */}
       <section className="section-y">
@@ -290,7 +304,7 @@ export default function Startseite() {
                 nummer: "A",
                 titel: "Gastronomie",
                 bild: "/images/platzhalter-gastronomie.jpg",
-                alt: "Person in schwarzer Schürze trägt zwei Bierfässer, im Hintergrund Zapfanlage",
+                alt: "Reich gedeckter Catering-Tisch mit Aufschnitt, Käse und Gebäck bei einer Veranstaltung",
                 text: "Wir übernehmen den Getränkeausschank mit bis zu 15 Schankwagen, Personal und Abrechnung. Auf Wunsch als Kooperation: Bühne und Technik ohne Mietkosten, dafür der Ausschank über uns.",
                 href: "/leistungen#gastronomie" as const,
               },
