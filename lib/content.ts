@@ -517,16 +517,22 @@ export const marken = [
 /**
  * Referenzkunden – die "Logo-Wand" auf /referenzen.
  *
- * Alle zehn genannten Auftraggeber sind enthalten. Für neun Namen ist die
- * Identität geklärt, sechs davon mit echtem, geprüftem Logo. Bei
- * "Kaltenkirchener Wiesn" und "Match Börner Open Air" steht die Identität
- * fest, aber es ließ sich (noch) kein sauberes Logo-Bild beschaffen. Nur
- * "Volker Mohr GmbH" bleibt komplett offen: Zwei gleichnamige Firmen wurden
- * gefunden, keine davon war die richtige – ein falsches Logo als "Kunde" zu
- * zeigen wäre für die betroffene Firma und für Eventservice Calabrese ein
- * größeres Problem als ein Textfeld ohne Logo. Diese Einträge tragen
- * deshalb vorerst nur einen Schriftzug (`logo: undefined`) statt eines
- * geratenen Bildes.
+ * Alle 14 genannten Auftraggeber sind enthalten, zehn davon mit echtem,
+ * geprüftem Logo. Bei "Kaltenkirchener Wiesn", "Match Börner Open Air" und
+ * "Musikfest Schleswig-Holstein" steht die Identität fest, aber es ließ
+ * sich (noch) kein sauberes Logo-Bild beschaffen. Nur "Volker Mohr GmbH"
+ * bleibt komplett offen: Zwei gleichnamige Firmen wurden gefunden, keine
+ * davon war die richtige – ein falsches Logo als "Kunde" zu zeigen wäre für
+ * die betroffene Firma und für Eventservice Calabrese ein größeres Problem
+ * als ein Textfeld ohne Logo. Diese Einträge tragen deshalb vorerst nur
+ * einen Schriftzug (`logo: undefined`) statt eines geratenen Bildes.
+ *
+ * "famila" ist eine gemeinsame Marke zweier unabhängiger Regionalhändler
+ * (Nordost/Nordwest) – siehe Kommentar beim Eintrag. "Bundespolizei" ist ein
+ * Hoheitszeichen: Die Nutzung als Referenzlogo sollte vor dem Livegang noch
+ * einmal ausdrücklich vom Kunden bestätigt werden, da für Bundes-/Landes-
+ * wappen eigene presserechtliche Regeln gelten können, unabhängig vom
+ * Urheberrecht.
  *
  * Zum Nachtragen: Datei nach public/images/kunden/ legen, hier `logo` und
  * `logoAlt` ergänzen. Empfohlenes Format: freigestellt oder auf hellem
@@ -586,4 +592,35 @@ export const referenzkunden: Referenzkunde[] = [
     kategorie: "Klinik",
   },
   { name: "Volker Mohr GmbH", kategorie: "Gewerbe" },
+  {
+    name: "famila",
+    /* famila ist eine gemeinsame Marke zweier unabhängiger Regionalhändler.
+       Bad Bramstedt liegt im Gebiet von famila Nordost (Bartels-Langness,
+       Kiel) – famila Nordwest (Bünting-Gruppe) deckt Bremen/West-Niedersachsen
+       ab und kommt geografisch nicht infrage. Logo daher von famila-nordost.de. */
+    logo: "famila.png",
+    logoAlt: "Logo von famila",
+    kategorie: "Handel",
+  },
+  {
+    name: "Wacken Brauerei",
+    logo: "wacken-brauerei.png",
+    logoAlt: "Logo der Wacken Brauerei",
+    kategorie: "Gewerbe",
+  },
+  {
+    name: "Musikfest Schleswig-Holstein",
+    /* Identität geklärt (Schleswig-Holstein Musik Festival, shmf.de), aber
+       kein sauberes Logo-Bild verfügbar: Der Name steht auf der Website nur
+       als gestylter Text, das Favicon ist ein abstraktes Muster, und die
+       einzigen Logo-Dateien im Footer sind fremde Förderer-Logos (Kulturstaats-
+       ministerin, "Der echte Norden", Neustart Kultur) – nicht das SHMF selbst. */
+    kategorie: "Festival",
+  },
+  {
+    name: "Bundespolizei",
+    logo: "bundespolizei.svg",
+    logoAlt: "Logo der Bundespolizei",
+    kategorie: "Behörde",
+  },
 ];

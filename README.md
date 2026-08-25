@@ -113,18 +113,22 @@ dem Livegang gesetzt sein.**
 
 ## Referenzkunden (/referenzen)
 
-`lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit zehn genannten
-Auftraggebern. Sechs davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
-Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg und Auenlandklinik. Drei
-Namen wurden vom Kunden nachträglich bestätigt, siehe Rückfrage im Sitzungsverlauf.
+`lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit 14 genannten
+Auftraggebern. Zehn davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
+Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg, Auenlandklinik, famila,
+Wacken Brauerei und Bundespolizei.
 
-Vier Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
+Drei Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
 
 - **Kaltenkirchener Wiesn** – Identität bestätigt (Kaki = Kaltenkirchen, offizielle Domain
   `kaki-wiesn.de`), aber die Seite war beim Abruf nicht erreichbar (503/TLS-Fehler). Logo
   bei Gelegenheit nachtragen.
 - **Match Börner Open Air** – Identität sicher (bekanntes Festival in Norderstedt), aber
   auf der Website ließ sich kein sauberes Logo-Bild finden, nur ein Line-up-Poster.
+- **Musikfest Schleswig-Holstein** – Identität sicher (`shmf.de`), aber die Website trägt
+  den Namen nur als gestylten Text; die einzigen Logo-Dateien dort sind fremde
+  Förderer-Logos (Kulturstaatsministerin, „Der echte Norden“, Neustart Kultur), nicht das
+  SHMF selbst.
 
 **Weiterhin ungeklärt: Volker Mohr GmbH.** Zwei unterschiedliche Firmen dieses Namens
 gefunden (Kaltenkirchen und Dollern) – laut Rückmeldung des Kunden ist **keine von beiden**
@@ -133,8 +137,30 @@ die richtige. Ort, Branche oder direkt das Logo nachreichen, dann wird es ergän
 „Weihnachtsmarkt Bad Bramstedt" hat vermutlich kein eigenes Logo und trägt bewusst nur
 den Namen.
 
+**Zwei Hinweise zu den neu ergänzten Logos:**
+
+- **famila** ist eine gemeinsame Marke zweier unabhängiger Regionalhändler. Bad Bramstedt
+  liegt im Gebiet von famila Nordost (Bartels-Langness, Kiel) – famila Nordwest
+  (Bünting-Gruppe) deckt Bremen/West-Niedersachsen ab und kommt geografisch nicht infrage.
+  Das eingebundene Logo stammt von `famila-nordost.de`. Falls der Kunde tatsächlich mit
+  der anderen famila-Gesellschaft zu tun hatte, bitte Bescheid geben.
+- **Bundespolizei**: Das Bundespolizei-Wappen ist ein Hoheitszeichen. Für Bundes- und
+  Landeswappen können presserechtlich eigene Regeln zur Nutzung gelten, unabhängig vom
+  Urheberrecht. Vor dem Livegang sollte der Kunde die Verwendung als Referenzlogo noch
+  einmal ausdrücklich bestätigen.
+
 **Um echte Logos nachzutragen:** Datei nach `public/images/kunden/` legen, in
 `referenzkunden` bei `logo` und `logoAlt` eintragen.
+
+## Referenzen-Laufband (Startseite)
+
+Zwischen dem Kennzahlenblock und der Leistungsübersicht zeigt `components/
+referenzen-laufband.tsx` dieselben Referenzkunden-Kacheln wie `/referenzen`, aber als
+endlos durchlaufendes Band statt als Raster. Technik: Der Kachel-Track enthält die Liste
+zweimal hintereinander, eine CSS-Animation (`animate-laufband`, definiert in
+`app/globals.css`) verschiebt ihn um exakt -50% seiner eigenen Breite – das entspricht
+einer Kopie, wodurch die Schleife ohne sichtbaren Sprung schließt. Pausiert bei Hover,
+respektiert `prefers-reduced-motion` über die bestehende globale Regel.
 
 ## Offene Punkte vor dem Livegang
 
@@ -143,7 +169,9 @@ den Namen.
    Betrieb abgestimmt. Vor dem Livegang inhaltlich prüfen – besonders, welche Leistungen
    tatsächlich selbst erbracht und welche zugekauft werden.
 2. **Volker Mohr GmbH** braucht noch die richtige Zuordnung, die Logos von
-   Kaltenkirchener Wiesn und Match Börner Open Air fehlen noch – siehe Abschnitt
+   Kaltenkirchener Wiesn, Match Börner Open Air und Musikfest Schleswig-Holstein fehlen
+   noch, die famila-Zuordnung (Nordost vs. Nordwest) und die Nutzung des
+   Bundespolizei-Wappens sollten vom Kunden bestätigt werden – siehe Abschnitt
    „Referenzkunden“ oben.
 3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
