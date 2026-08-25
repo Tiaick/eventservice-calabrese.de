@@ -24,18 +24,19 @@ export default function ImpressumSeite() {
       <section className="section-y">
         <div className="container-page">
           <PlatzhalterHinweis>
-            Die folgenden Angaben sind Platzhalter und rechtlich noch nicht
-            verbindlich. Vor der Veröffentlichung müssen Rechtsform, vollständiger
-            Name der vertretungsberechtigten Person, Registereintrag,
-            Umsatzsteuer-Identifikationsnummer sowie – falls vorhanden – Angaben zur
-            Berufshaftpflichtversicherung ergänzt und durch die zuständige Rechtsberatung
-            geprüft werden.
+            Die Steuernummer wurde vom Schwesterbetrieb Restaurant Calabrese (gleicher
+            Inhaber, gleiche Anschrift) übernommen, da für Eventservice Calabrese keine
+            eigene vorlag. Bitte vor der Veröffentlichung bestätigen, dass sie auch für
+            diesen Geschäftsbereich gilt, und den gesamten Text durch die zuständige
+            Rechtsberatung prüfen lassen.
           </PlatzhalterHinweis>
 
           <div className="rechtstext">
             <h2>Diensteanbieter</h2>
             <address>
               {site.legalName}
+              <br />
+              Inhaber: Calvin Corniche
               <br />
               {site.adresse.strasse}
               <br />
@@ -45,9 +46,7 @@ export default function ImpressumSeite() {
             </address>
 
             <h3>Vertreten durch</h3>
-            <p>
-              <strong>[Vor- und Nachname der vertretungsberechtigten Person]</strong>
-            </p>
+            <p>Calvin Corniche</p>
 
             <h2>Kontakt</h2>
             <p>
@@ -58,23 +57,16 @@ export default function ImpressumSeite() {
 
             <h2>Registereintrag und Steuerangaben</h2>
             <p>
-              Rechtsform: <strong>[z. B. Einzelunternehmen / GmbH]</strong>
+              Rechtsform: Einzelunternehmen
               <br />
-              Registergericht: <strong>[Amtsgericht, sofern eingetragen]</strong>
-              <br />
-              Registernummer: <strong>[HRA/HRB-Nummer, sofern vorhanden]</strong>
-            </p>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-              <br />
-              <strong>[USt-IdNr. eintragen]</strong>
+              Steuernummer: 11/031/06109
             </p>
 
             <h2>Verantwortlich für den Inhalt</h2>
             <p>
               Verantwortlich im Sinne von § 18 Abs. 2 Medienstaatsvertrag (MStV):
               <br />
-              <strong>[Name]</strong>, Anschrift wie oben.
+              Calvin Corniche, Anschrift wie oben.
             </p>
 
             <h2>Verbraucherstreitbeilegung</h2>
@@ -118,11 +110,9 @@ export default function ImpressumSeite() {
 
             <h3>Bildnachweise</h3>
             <p>
-              <strong>
-                [Platzhalter: Die derzeit verwendeten Fotos stammen von Unsplash
-                (Unsplash-Lizenz). Nach dem Austausch gegen eigene Aufnahmen ist hier der
-                tatsächliche Bildnachweis einzutragen.]
-              </strong>
+              Ein Teil der auf dieser Website verwendeten Fotos stammt von Unsplash
+              (Unsplash-Lizenz, kostenlose kommerzielle Nutzung). Die übrigen Aufnahmen
+              sind eigene Fotos von Eventservice Calabrese.
             </p>
           </div>
         </div>

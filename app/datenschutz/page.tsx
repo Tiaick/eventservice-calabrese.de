@@ -46,10 +46,8 @@ export default function DatenschutzSeite() {
               E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
             </address>
             <p>
-              <strong>
-                [Platzhalter: Falls ein Datenschutzbeauftragter benannt ist, hier
-                Kontaktdaten ergänzen.]
-              </strong>
+              Ein Datenschutzbeauftragter ist für diesen Betrieb gesetzlich nicht
+              vorgeschrieben und wurde nicht bestellt.
             </p>
 
             <h2>2. Hosting und Server-Logfiles</h2>
