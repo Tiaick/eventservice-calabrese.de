@@ -125,7 +125,15 @@ export function SiteFooter() {
         {/* Blattfuß */}
         <div className="flex flex-col gap-3 border-t border-ink-100/15 py-6 font-mono text-[0.65rem] text-ink-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {jahr} {site.legalName}
+            © {jahr} {site.legalName} · Website von{" "}
+            <a
+              href="https://keep-it-fair.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-flare-400"
+            >
+              keep-it-fair.de
+            </a>
           </p>
           <ul className="flex flex-wrap gap-6">
             {rechtlicheNavigation.map((eintrag) => (
