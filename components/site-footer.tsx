@@ -132,7 +132,7 @@ export function SiteFooter() {
               rel="noopener noreferrer"
               className="transition-colors hover:text-flare-400"
             >
-              keep-it-fair.de
+              Keep IT Fair
             </a>
           </p>
           <ul className="flex flex-wrap gap-6">
