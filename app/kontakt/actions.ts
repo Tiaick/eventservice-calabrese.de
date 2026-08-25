@@ -65,7 +65,7 @@ export async function kontaktAbsenden(
   try {
     await sendeKontaktMail(werte);
   } catch (ursache) {
-    /* Serverseitig laut loggen, damit eine fehlende SMTP-Konfiguration im
+    /* Serverseitig laut loggen, damit eine fehlende Resend-Konfiguration im
        Deployment sofort auffällt und keine Anfrage still verloren geht. */
     console.error("Kontaktformular konnte nicht versendet werden:", ursache);
 

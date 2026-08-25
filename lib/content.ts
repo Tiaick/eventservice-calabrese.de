@@ -619,8 +619,8 @@ export const referenzkunden: Referenzkunde[] = [
   },
   {
     name: "Bundespolizei",
-    logo: "bundespolizei.svg",
-    logoAlt: "Logo der Bundespolizei",
+    /* Auf Kundenwunsch bewusst ohne Wappen, nur als Schriftzug – das Wappen
+       ist ein Hoheitszeichen mit eigenen presserechtlichen Regeln. */
     kategorie: "Behörde",
   },
 ];

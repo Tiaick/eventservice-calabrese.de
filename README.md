@@ -8,7 +8,7 @@ TypeScript im Strict Mode.
 
 ```bash
 npm install
-cp .env.example .env.local   # SMTP-Zugang eintragen, siehe unten
+cp .env.example .env.local   # Resend-Zugang eintragen, siehe unten
 npm run dev                  # http://localhost:3000
 ```
 
@@ -23,7 +23,7 @@ components/          Wiederverwendbare Bausteine (Header, Footer, Karten, Formul
 lib/
   site.ts            Stammdaten: Adresse, Telefon, E-Mail, Navigation
   content.ts         Redaktionelle Inhalte: Leistungen, Preise, Galerie, Kennzahlen
-  mail.ts            SMTP-Versand
+  mail.ts            Mailversand über Resend
 public/images/       Bilder – derzeit Platzhalter, siehe PLATZHALTER-BILDER.md
 ```
 
@@ -92,11 +92,13 @@ Radien, Timing. Es gibt keine `tailwind.config.js`.
 
 ## Kontaktformular
 
-Der Versand läuft über eine Server Action und `nodemailer` gegen den bestehenden
-SMTP-Anbieter. Es ist kein Formular-Widget eines Drittanbieters eingebunden.
+Der Versand läuft über eine Server Action und [Resend](https://resend.com) (`lib/mail.ts`).
+Es ist kein Formular-Widget eines Drittanbieters eingebunden.
 
-Nötige Umgebungsvariablen (siehe `.env.example`): `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`,
-`SMTP_PASSWORD`, `SMTP_FROM`, `KONTAKT_EMPFAENGER`.
+Nötige Umgebungsvariablen (siehe `.env.example`): `RESEND_API_KEY`, `RESEND_FROM`,
+`KONTAKT_EMPFAENGER`. `RESEND_FROM` muss eine Adresse auf einer bei Resend
+**verifizierten Domain** sein (dashboard.resend.com/domains) – sonst weist die API den
+Versand ab.
 
 Fehlen diese Werte, nimmt das Formular keine Anfragen an: Die Besucher bekommen eine
 verständliche Fehlermeldung mit Verweis auf Telefon und WhatsApp, und der Fehler wird
@@ -114,11 +116,11 @@ dem Livegang gesetzt sein.**
 ## Referenzkunden (/referenzen)
 
 `lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit 14 genannten
-Auftraggebern. Zehn davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
-Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg, Auenlandklinik, famila,
-Wacken Brauerei und Bundespolizei.
+Auftraggebern. Neun davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
+Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg, Auenlandklinik, famila
+und Wacken Brauerei.
 
-Drei Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
+Vier Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
 
 - **Kaltenkirchener Wiesn** – Identität bestätigt (Kaki = Kaltenkirchen, offizielle Domain
   `kaki-wiesn.de`), aber die Seite war beim Abruf nicht erreichbar (503/TLS-Fehler). Logo
@@ -129,6 +131,9 @@ Drei Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
   den Namen nur als gestylten Text; die einzigen Logo-Dateien dort sind fremde
   Förderer-Logos (Kulturstaatsministerin, „Der echte Norden“, Neustart Kultur), nicht das
   SHMF selbst.
+- **Bundespolizei** – auf ausdrücklichen Kundenwunsch bewusst nur als Schriftzug, kein
+  Wappen. Das Bundespolizei-Wappen ist ein Hoheitszeichen, für das presserechtlich eigene
+  Nutzungsregeln gelten können, unabhängig vom Urheberrecht.
 
 **Weiterhin ungeklärt: Volker Mohr GmbH.** Zwei unterschiedliche Firmen dieses Namens
 gefunden (Kaltenkirchen und Dollern) – laut Rückmeldung des Kunden ist **keine von beiden**
@@ -137,17 +142,10 @@ die richtige. Ort, Branche oder direkt das Logo nachreichen, dann wird es ergän
 „Weihnachtsmarkt Bad Bramstedt" hat vermutlich kein eigenes Logo und trägt bewusst nur
 den Namen.
 
-**Zwei Hinweise zu den neu ergänzten Logos:**
-
-- **famila** ist eine gemeinsame Marke zweier unabhängiger Regionalhändler. Bad Bramstedt
-  liegt im Gebiet von famila Nordost (Bartels-Langness, Kiel) – famila Nordwest
-  (Bünting-Gruppe) deckt Bremen/West-Niedersachsen ab und kommt geografisch nicht infrage.
-  Das eingebundene Logo stammt von `famila-nordost.de`. Falls der Kunde tatsächlich mit
-  der anderen famila-Gesellschaft zu tun hatte, bitte Bescheid geben.
-- **Bundespolizei**: Das Bundespolizei-Wappen ist ein Hoheitszeichen. Für Bundes- und
-  Landeswappen können presserechtlich eigene Regeln zur Nutzung gelten, unabhängig vom
-  Urheberrecht. Vor dem Livegang sollte der Kunde die Verwendung als Referenzlogo noch
-  einmal ausdrücklich bestätigen.
+**Hinweis zu famila:** Die Marke gehört zwei unabhängigen Regionalhändlern. Bad Bramstedt
+liegt im Gebiet von famila Nordost (Bartels-Langness, Kiel) – famila Nordwest
+(Bünting-Gruppe) deckt Bremen/West-Niedersachsen ab und kommt geografisch nicht infrage.
+Das eingebundene Logo stammt von `famila-nordost.de`; vom Kunden bestätigt.
 
 **Um echte Logos nachzutragen:** Datei nach `public/images/kunden/` legen, in
 `referenzkunden` bei `logo` und `logoAlt` eintragen.
@@ -170,19 +168,18 @@ respektiert `prefers-reduced-motion` über die bestehende globale Regel.
    tatsächlich selbst erbracht und welche zugekauft werden.
 2. **Volker Mohr GmbH** braucht noch die richtige Zuordnung, die Logos von
    Kaltenkirchener Wiesn, Match Börner Open Air und Musikfest Schleswig-Holstein fehlen
-   noch, die famila-Zuordnung (Nordost vs. Nordwest) und die Nutzung des
-   Bundespolizei-Wappens sollten vom Kunden bestätigt werden – siehe Abschnitt
-   „Referenzkunden“ oben.
+   noch – siehe Abschnitt „Referenzkunden“ oben.
 3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
 4. **Impressum und Datenschutzerklärung** enthalten gekennzeichnete Platzhalter und
    müssen rechtlich geprüft werden
 5. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
-6. **SMTP-Zugang** im Deployment hinterlegen
+6. **Resend-Zugang** im Deployment hinterlegen (Domain bei Resend verifizieren, API-Key
+   erzeugen, die drei Umgebungsvariablen setzen)
 
 ## Deployment
 
 Als Node-Anwendung gebaut (`npm run build`, Start über `npm run start`), passend für das
-bestehende Coolify-Setup. Die Umgebungsvariablen für SMTP dort als Environment Variables
-hinterlegen. Alle Seiten werden statisch vorgerendert; dynamisch ist allein die Server
-Action des Kontaktformulars.
+bestehende Coolify-Setup. Die Umgebungsvariablen für Resend dort als Environment
+Variables hinterlegen. Alle Seiten werden statisch vorgerendert; dynamisch ist allein die
+Server Action des Kontaktformulars.

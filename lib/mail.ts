@@ -1,14 +1,17 @@
 import "server-only";
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 /**
- * Mailversand über den bestehenden SMTP-Anbieter (z. B. Brevo, Mailjet, eigener
- * Server). Es wird bewusst kein Drittanbieter-Formular-Widget eingebunden –
- * die Daten verlassen den eigenen Server nur zum Mailanbieter.
+ * Mailversand über Resend (resend.com). Es wird bewusst kein Drittanbieter-
+ * Formular-Widget eingebunden – die Daten verlassen den eigenen Server nur
+ * zum Mailanbieter.
  *
  * Nötige Umgebungsvariablen (siehe .env.example):
- *   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, SMTP_FROM, KONTAKT_EMPFAENGER
+ *   RESEND_API_KEY, RESEND_FROM, KONTAKT_EMPFAENGER
+ *
+ * RESEND_FROM muss eine Adresse auf einer bei Resend verifizierten Domain
+ * sein (dashboard.resend.com/domains) – sonst weist die API den Versand ab.
  */
 
 export type MailDaten = {
@@ -20,22 +23,19 @@ export type MailDaten = {
   nachricht: string;
 };
 
-function smtpKonfiguration() {
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT ?? 587);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASSWORD;
-  const from = process.env.SMTP_FROM;
+function resendKonfiguration() {
+  const apiKey = process.env.RESEND_API_KEY;
+  const von = process.env.RESEND_FROM;
   const an = process.env.KONTAKT_EMPFAENGER;
 
-  if (!host || !user || !pass || !from || !an) return null;
+  if (!apiKey || !von || !an) return null;
 
-  return { host, port, user, pass, from, an };
+  return { apiKey, von, an };
 }
 
 /** Erlaubt der Kontaktseite, fehlende Konfiguration früh zu erkennen. */
 export function istMailKonfiguriert(): boolean {
-  return smtpKonfiguration() !== null;
+  return resendKonfiguration() !== null;
 }
 
 function escapeHtml(text: string): string {
@@ -47,22 +47,16 @@ function escapeHtml(text: string): string {
 }
 
 export async function sendeKontaktMail(daten: MailDaten): Promise<void> {
-  const konfiguration = smtpKonfiguration();
+  const konfiguration = resendKonfiguration();
 
   if (!konfiguration) {
     throw new Error(
-      "SMTP ist nicht konfiguriert. Bitte SMTP_HOST, SMTP_PORT, SMTP_USER, " +
-        "SMTP_PASSWORD, SMTP_FROM und KONTAKT_EMPFAENGER setzen.",
+      "Resend ist nicht konfiguriert. Bitte RESEND_API_KEY, RESEND_FROM und " +
+        "KONTAKT_EMPFAENGER setzen.",
     );
   }
 
-  const transporter = nodemailer.createTransport({
-    host: konfiguration.host,
-    port: konfiguration.port,
-    /* Port 465 spricht implizites TLS, 587 startet mit STARTTLS. */
-    secure: konfiguration.port === 465,
-    auth: { user: konfiguration.user, pass: konfiguration.pass },
-  });
+  const resend = new Resend(konfiguration.apiKey);
 
   const zeilen: [string, string | undefined][] = [
     ["Name", daten.name],
@@ -77,8 +71,8 @@ export async function sendeKontaktMail(daten: MailDaten): Promise<void> {
     .map(([label, wert]) => `${label}: ${wert}`)
     .join("\n");
 
-  await transporter.sendMail({
-    from: konfiguration.from,
+  const { error } = await resend.emails.send({
+    from: konfiguration.von,
     to: konfiguration.an,
     /* Antworten gehen direkt an die anfragende Person. */
     replyTo: `${daten.name} <${daten.email}>`,
@@ -99,4 +93,8 @@ export async function sendeKontaktMail(daten: MailDaten): Promise<void> {
       <p style="font-family:sans-serif;white-space:pre-wrap">${escapeHtml(daten.nachricht)}</p>
     `,
   });
+
+  if (error) {
+    throw new Error(`Resend-Versand fehlgeschlagen: ${error.message}`);
+  }
 }
