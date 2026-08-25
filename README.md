@@ -171,12 +171,12 @@ respektiert `prefers-reduced-motion` über die bestehende globale Regel.
    noch – siehe Abschnitt „Referenzkunden“ oben.
 3. **Bilder** in `public/images/` gegen echte Eventfotos tauschen –
    Anforderungen in `public/images/PLATZHALTER-BILDER.md`
-4. **Impressum und Datenschutzerklärung**: Inhaber, Anschrift und Kontakt sind
-   eingetragen (Impressum vom Schwesterbetrieb Restaurant Calabrese übernommen, gleicher
-   Inhaber und gleiche Adresse). Die Steuernummer sollte vom Kunden für diesen
-   Geschäftsbereich noch bestätigt werden. In der Datenschutzerklärung fehlen noch
-   Hosting-Anbieter/Serverstandort und das Stand-Datum (gekennzeichnete Platzhalter). Der
-   gesamte Text sollte vor dem Livegang rechtlich geprüft werden.
+4. **Impressum und Datenschutzerklärung**: Inhaber, Anschrift, Kontakt und Steuernummer
+   sind eingetragen und vom Kunden bestätigt (Impressum vom Schwesterbetrieb Restaurant
+   Calabrese übernommen, gleicher Inhaber und gleiche Adresse). In der
+   Datenschutzerklärung fehlen noch Hosting-Anbieter/Serverstandort und das Stand-Datum
+   (gekennzeichnete Platzhalter). Der gesamte Text sollte vor dem Livegang rechtlich
+   geprüft werden.
 5. **Social-Media-Profile** in `lib/site.ts` eintragen oder entfernen
 6. **Resend-Zugang** im Deployment hinterlegen (Domain bei Resend verifizieren, API-Key
    erzeugen, die drei Umgebungsvariablen setzen)

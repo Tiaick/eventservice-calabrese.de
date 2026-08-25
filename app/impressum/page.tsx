@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { PageHeader } from "@/components/page-header";
-import { PlatzhalterHinweis } from "@/components/platzhalter-hinweis";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,14 +22,6 @@ export default function ImpressumSeite() {
 
       <section className="section-y">
         <div className="container-page">
-          <PlatzhalterHinweis>
-            Die Steuernummer wurde vom Schwesterbetrieb Restaurant Calabrese (gleicher
-            Inhaber, gleiche Anschrift) übernommen, da für Eventservice Calabrese keine
-            eigene vorlag. Bitte vor der Veröffentlichung bestätigen, dass sie auch für
-            diesen Geschäftsbereich gilt, und den gesamten Text durch die zuständige
-            Rechtsberatung prüfen lassen.
-          </PlatzhalterHinweis>
-
           <div className="rechtstext">
             <h2>Diensteanbieter</h2>
             <address>
