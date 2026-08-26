@@ -142,9 +142,18 @@ export default function DatenschutzSeite() {
 
             <h2>5. Cookies und Reichweitenmessung</h2>
             <p>
-              Diese Website setzt <strong>keine Cookies zu Analyse- oder Werbezwecken</strong>{" "}
-              ein. Es findet keine Reichweitenmessung und kein Tracking statt. Ein
-              Cookie-Banner ist daher nicht erforderlich.
+              Diese Website setzt aktuell <strong>keine Cookies zu Analyse- oder Werbezwecken</strong>{" "}
+              ein. Es findet derzeit keine Reichweitenmessung und kein Tracking statt.
+            </p>
+            <p>
+              Der Einwilligungs-Banner am unteren Bildschirmrand bereitet die Seite auf
+              künftige Auswertungswerkzeuge vor (zum Beispiel Google Analytics), die zum
+              jetzigen Zeitpunkt noch nicht eingebunden sind. Ihre Auswahl – „Akzeptieren“
+              oder „Ablehnen“ – wird ausschließlich lokal in Ihrem Browser gespeichert
+              (kein Cookie, keine Übertragung an einen Server) und entscheidet darüber, ob
+              künftige Analyse-Skripte bei Ihnen laden dürfen. Sobald ein solches Werkzeug
+              tatsächlich eingebunden wird, wird diese Datenschutzerklärung um die
+              entsprechenden Angaben zum Anbieter und zur Datenverarbeitung ergänzt.
             </p>
             <p>
               Schriftarten werden lokal von unserem eigenen Server ausgeliefert. Es besteht

@@ -107,7 +107,11 @@ dem Livegang gesetzt sein.**
 
 ## Datenschutz
 
-- Keine Analyse- oder Werbe-Cookies, kein Tracking – daher kein Cookie-Banner nötig
+- Aktuell keine Analyse- oder Werbe-Cookies, kein Tracking. Ein Einwilligungs-Banner
+  (`components/cookie-banner.tsx`) fragt trotzdem schon jetzt um Zustimmung – Vorbereitung
+  auf künftige Tools wie Google Analytics. Die Auswahl landet nur in `localStorage`, nicht
+  in einem Cookie. Prüf-Helfer für künftige Skripte: `lib/consent.ts`,
+  `hatAnalyseEinwilligung()`.
 - Schriften werden lokal ausgeliefert
 - Die Karte auf der Kontaktseite lädt **erst nach ausdrücklichem Klick**; vorher geht
   kein Request an OpenStreetMap (per Test verifiziert)
@@ -159,6 +163,18 @@ zweimal hintereinander, eine CSS-Animation (`animate-laufband`, definiert in
 `app/globals.css`) verschiebt ihn um exakt -50% seiner eigenen Breite – das entspricht
 einer Kopie, wodurch die Schleife ohne sichtbaren Sprung schließt. Pausiert bei Hover,
 respektiert `prefers-reduced-motion` über die bestehende globale Regel.
+
+## Neukunden-Rabatt-Popup
+
+`components/rabatt-popup.tsx` zeigt site-weit (in `app/layout.tsx` eingebunden) ein
+Popup mit 15 % Neukundenrabatt, rund 1,2 Sekunden nach dem Laden. Befristet bis zum in
+der Datei hinterlegten `GUELTIG_BIS` (aktuell **31.12.2026** – im Auftrag war
+versehentlich 2022 genannt, das würde das Popup sofort und dauerhaft deaktivieren, daher
+auf das erkennbar gemeinte Jahresende korrigiert). Danach rendert die Komponente
+nichts mehr, keine manuelle Deaktivierung nötig. Einmal geschlossen, bleibt es für den
+jeweiligen Browser dauerhaft weg (`localStorage`, Schlüssel `rabatt-popup-geschlossen`).
+Zum Ändern des Rabatts, Texts oder Datums genügt die Anpassung der Konstanten am
+Dateianfang.
 
 ## Offene Punkte vor dem Livegang
 

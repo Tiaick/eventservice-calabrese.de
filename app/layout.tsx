@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Condensed } from "next/font/google";
 
+import { CookieBanner } from "@/components/cookie-banner";
+import { RabattPopup } from "@/components/rabatt-popup";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { LocalBusinessSchema } from "@/components/structured-data";
@@ -109,6 +111,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <LocalBusinessSchema />
+        <RabattPopup />
+        <CookieBanner />
       </body>
     </html>
   );
