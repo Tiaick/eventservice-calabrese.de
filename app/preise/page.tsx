@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { PageHeader } from "@/components/page-header";
 import { Preistabelle } from "@/components/price-table";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { preispakete } from "@/lib/content";
+import { faq, preispakete } from "@/lib/content";
+
+const faqPreise = faq.filter((eintrag) => eintrag.kategorie.includes("preise"));
 
 export const metadata: Metadata = {
   title: "Preise & Pakete",
@@ -119,6 +122,13 @@ export default function PreiseSeite() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        nummer="—"
+        titel="Fragen zu Preisen und Konditionen"
+        lead="Die Antworten, die sonst im ersten Telefonat geklärt werden – hier schon vorab."
+        eintraege={faqPreise}
+      />
 
       <CTASection
         marke="Individuelles Angebot"

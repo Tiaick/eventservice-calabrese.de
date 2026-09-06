@@ -506,6 +506,106 @@ export const galerie: GalerieBild[] = [
   },
 ];
 
+/**
+ * Häufige Fragen – als sichtbarer Q&A-Block je Seite UND als Grundlage für das
+ * FAQPage-Schema (components/faq-section.tsx). Jede Antwort muss deshalb für
+ * sich stehen: kurz, faktentreu und ohne Verweis auf "siehe oben".
+ *
+ * `kategorie` steuert, auf welcher Seite ein Eintrag erscheint – ein Eintrag
+ * kann mehreren Seiten zugeordnet sein.
+ */
+export type FAQEintrag = {
+  frage: string;
+  antwort: string;
+  kategorie: ("preise" | "leistungen")[];
+};
+
+export const faq: FAQEintrag[] = [
+  {
+    frage: "Was kostet eine Bühne mieten bei Eventservice Calabrese?",
+    antwort:
+      "Die kompakte Bühne mit rund 30 m² kostet ab 400 € netto pro Tag, unsere meistgebuchte " +
+      "Pultus 48 mit 6 × 8 Metern ab 790 € und die Bühne XXL mit Dach und Traversenkonstruktion " +
+      "ab 1.200 €. In allen Preisen sind Anlieferung sowie Auf- und Abbau durch unser Team enthalten.",
+    kategorie: ["preise", "leistungen"],
+  },
+  {
+    frage: "Sind die genannten Preise netto oder brutto?",
+    antwort:
+      "Alle Preise auf dieser Website sind Nettopreise zuzüglich der gesetzlichen Umsatzsteuer.",
+    kategorie: ["preise"],
+  },
+  {
+    frage: "Ist die Anfahrt im Preis enthalten?",
+    antwort:
+      "Innerhalb von 50 km um unseren Standort Bad Bramstedt ist die Anfahrt in den genannten " +
+      "Preisen enthalten. Darüber hinaus rechnen wir sie transparent als eigene Position im Angebot aus.",
+    kategorie: ["preise"],
+  },
+  {
+    frage: "Was kostet eine Veranstaltung, die mehrere Tage dauert?",
+    antwort:
+      "Beim Komplettpaket XXL wird jeder weitere Veranstaltungstag mit 50 % des Tagespreises " +
+      "berechnet. Bei allen anderen Paketen kalkulieren wir mehrtägige Veranstaltungen individuell.",
+    kategorie: ["preise"],
+  },
+  {
+    frage: "Warum stehen nicht bei allen Leistungen feste Preise?",
+    antwort:
+      "Ab-Preise nennen wir ausschließlich bei den Bühnen, weil sich diese Position am klarsten " +
+      "kalkulieren lässt. Licht, Ton, Special Effects, Gastronomie, Standmanagement und Sponsoring " +
+      "hängen zu stark von Fläche, Gästezahl und Programm ab – die kalkulieren wir individuell, " +
+      "aber immer mit klaren, nachvollziehbaren Positionen im Angebot statt einer Pauschale.",
+    kategorie: ["preise", "leistungen"],
+  },
+  {
+    frage: "In welchem Gebiet ist Eventservice Calabrese tätig?",
+    antwort:
+      "Von unserem Standort in Bad Bramstedt aus sind wir in ganz Schleswig-Holstein, Hamburg, " +
+      "Niedersachsen und Mecklenburg-Vorpommern für Veranstaltungen im Einsatz.",
+    kategorie: ["leistungen"],
+  },
+  {
+    frage: "Übernehmen Sie auch die komplette Organisation, nicht nur die Technik?",
+    antwort:
+      "Ja. Neben Bühne, Licht und Ton übernehmen wir auf Wunsch die gesamte Konzeption, die " +
+      "Abstimmung mit Ordnungsamt, Feuerwehr und Polizei sowie die Koordination aller Gewerke. " +
+      "Am Veranstaltungstag ist eine feste Ansprechperson von uns durchgehend vor Ort.",
+    kategorie: ["leistungen"],
+  },
+  {
+    frage: "Arbeiten Sie nur mit Städten und Gemeinden, oder auch mit Vereinen und Unternehmen?",
+    antwort:
+      "Wir sind Gesamtdienstleister für Veranstaltungen jeder Art. Städte und Gemeinden sind ein " +
+      "Schwerpunkt, weil dort besonders viele Gewerke koordiniert werden müssen – Vereinsfeiern, " +
+      "Firmenevents und private Feiern schließen wir dabei ausdrücklich nicht aus.",
+    kategorie: ["leistungen"],
+  },
+  {
+    frage: "Ist die Lasershow zertifiziert und rechtlich abgesichert?",
+    antwort:
+      "Ja. Wir setzen ausschließlich zertifizierte Laseranlagen ein, die von geschulten " +
+      "Laserschutzbeauftragten nach Sicherheitskonzept gefahren werden.",
+    kategorie: ["leistungen"],
+  },
+  {
+    frage: "Wie viele Besucherinnen und Besucher können Sie beschallen?",
+    antwort:
+      "Mit Line-Array-Systemen von RCF und L-Acoustics versorgen wir Open-Air-Flächen für bis zu " +
+      "5.000 Personen. Für Säle, Zelte und Ansprachen setzen wir kleinere, konventionelle " +
+      "Beschallungssysteme ein.",
+    kategorie: ["leistungen"],
+  },
+  {
+    frage: "Gibt es ein Modell ohne Mietkosten für Vereine oder Kommunen mit knappem Budget?",
+    antwort:
+      "Ja, unsere Gastronomie-Kooperation: Wir stellen Bühne und Technik ohne Mietkosten und " +
+      "übernehmen dafür den Getränkeausschank. Ob das für die jeweilige Veranstaltung aufgeht, " +
+      "rechnen wir vorher gemeinsam durch – das Modell trägt nicht bei jeder Größe.",
+    kategorie: ["leistungen", "preise"],
+  },
+];
+
 /** Technikmarken als Vertrauenssignal. */
 export const marken = [
   { name: "RCF", beschreibung: "Line Arrays und Beschallung" },

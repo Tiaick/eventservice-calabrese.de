@@ -224,6 +224,14 @@ export function IconUhr(props: IconProps) {
   );
 }
 
+export function IconPlus(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 4.5v15M4.5 12h15" />
+    </Icon>
+  );
+}
+
 export function IconSchild(props: IconProps) {
   return (
     <Icon {...props}>

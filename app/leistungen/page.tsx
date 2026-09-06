@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { Datenliste, Eckmarken, Masslinie, Sektionsmarke } from "@/components/plan";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { ButtonLink } from "@/components/ui/button";
-import { leistungen } from "@/lib/content";
+import { faq, leistungen } from "@/lib/content";
 import { cn } from "@/lib/utils";
+
+const faqLeistungen = faq.filter((eintrag) => eintrag.kategorie.includes("leistungen"));
 
 export const metadata: Metadata = {
   title: "Leistungen",
@@ -161,6 +164,13 @@ export default function LeistungenSeite() {
           </section>
         );
       })}
+
+      <FAQSection
+        nummer="09"
+        titel="Fragen zu unseren Leistungen"
+        lead="Was uns am häufigsten gefragt wird – kurz und ohne Verweis auf ein Formular."
+        eintraege={faqLeistungen}
+      />
 
       <CTASection
         marke="Noch unsicher?"
