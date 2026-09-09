@@ -72,16 +72,6 @@ export default function ReferenzenSeite() {
           <div className="mt-8">
             <GalleryGrid />
           </div>
-
-          {/* Klarer Hinweis, solange noch Platzhalter zu sehen sind */}
-          <p className="mt-12 border-l-2 border-ink-600 py-2 pl-5 text-sm leading-relaxed text-ink-400">
-            <span className="font-mono text-[0.62rem] tracking-[0.14em] text-ink-300 uppercase">
-              Hinweis zur Bildauswahl
-            </span>
-            <br />
-            Die hier gezeigten Aufnahmen sind Platzhalter und werden vor dem Livegang
-            durch eigene Eventfotos ersetzt.
-          </p>
         </div>
       </section>
 
