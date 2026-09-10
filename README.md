@@ -119,10 +119,24 @@ dem Livegang gesetzt sein.**
 
 ## Referenzkunden (/referenzen)
 
-`lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit 14 genannten
-Auftraggebern. Neun davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
-Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg, Auenlandklinik, famila
-und Wacken Brauerei.
+`lib/content.ts`, Konstante `referenzkunden`, zeigt eine Logo-Wand mit 17 genannten
+Auftraggebern. Zwölf davon haben ein echtes, geprüftes Logo: Hagebau, Stadt Bad Bramstedt,
+Amt Bad Bramstedt-Land, Bandel Automobiltechnik, HamCan Hamburg, Auenlandklinik, famila,
+Wacken Brauerei, Pferdeklinik Bilsen, Hof Bühring und Stiftung Anscharhöhe Eppendorf.
+
+**Neu hinzugekommen:**
+
+- **Pferdeklinik Bilsen** – Logo von `pferdeklinik-bilsen.de`, von CMYK nach sRGB
+  konvertiert (das Original war im Druck-Farbraum und hätte im Browser verfälscht
+  gewirkt).
+- **Reiterhof Bühring** – firmiert auf der eigenen Website als „Hof Bühring“
+  (`reiterhofbuehring.de`, Alveslohe); Logo entsprechend beschriftet. Nur in 150 × 96 px
+  verfügbar, eine größere Version war nicht auffindbar.
+- **Stiftung Anscharhöhe Eppendorf** – vom Kunden als „Ancherhöhe“ genannt, korrekte
+  Schreibweise laut Wikipedia und eigener Website ist „Anscharhöhe“. Das eingebundene
+  SVG-Logo ist die aktuell auf `anscharhoehe.de` aktive Jubiläumsversion („140 Jahre“) –
+  nach Ablauf des Jubiläumsjahrs beim Kunden nachfragen, ob wieder das reguläre Logo
+  gilt.
 
 Vier Namen tragen weiterhin nur einen Schriftzug statt eines Logos:
 

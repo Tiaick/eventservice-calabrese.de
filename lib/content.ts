@@ -723,4 +723,36 @@ export const referenzkunden: Referenzkunde[] = [
        ist ein Hoheitszeichen mit eigenen presserechtlichen Regeln. */
     kategorie: "Behörde",
   },
+  {
+    name: "Pferdeklinik Bilsen",
+    /* Logo von pferdeklinik-bilsen.de bezogen, von CMYK nach sRGB konvertiert
+       (das Original-JPEG war im Druck-Farbraum und hätte im Browser verfälscht
+       gewirkt). Bilsen liegt wie mehrere andere Referenzen im unmittelbaren
+       Einzugsgebiet um Kaltenkirchen/Bad Bramstedt. */
+    logo: "pferdeklinik-bilsen.png",
+    logoAlt: "Logo der Pferdeklinik Bilsen mit Pferdekopf und Äskulapstab",
+    kategorie: "Tierklinik",
+  },
+  {
+    name: "Reiterhof Bühring",
+    /* Firmiert auf der eigenen Website als "Hof Bühring" (reiterhofbuehring.de,
+       Alveslohe) – Logo entsprechend beschriftet. Nur in geringer Auflösung
+       verfügbar (150 × 96 px), eine größere Version war auf der Kundenseite
+       nicht auffindbar. */
+    logo: "hof-buehring.png",
+    logoAlt: "Logo von Hof Bühring mit Pferdekopf-Silhouette",
+    kategorie: "Reiterhof",
+  },
+  {
+    name: "Stiftung Anscharhöhe Eppendorf",
+    /* Vom Kunden als "Stiftung Ancherhöhe" genannt – korrekte Schreibweise
+       laut Wikipedia und eigener Website ist "Anscharhöhe" (nach der Kirche
+       St. Anschar). Das SVG-Logo von anscharhoehe.de ist die aktuell dort
+       aktive Jubiläumsversion ("140 Jahre", Stiftungsgründung 1972,
+       diakonische Arbeit seit 1885) – falls die Stiftung nach dem
+       Jubiläumsjahr auf ihr reguläres Logo zurückwechselt, hier nachziehen. */
+    logo: "stiftung-anscharhoehe.svg",
+    logoAlt: "Jubiläums-Logo der Stiftung Anscharhöhe Eppendorf, 140 Jahre",
+    kategorie: "Stiftung",
+  },
 ];
